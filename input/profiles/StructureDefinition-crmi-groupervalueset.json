@@ -1,0 +1,85 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "crmi-groupervalueset",
+  "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-groupervalueset",
+  "version" : "3.0.0",
+  "name" : "CRMIGrouperValueSet",
+  "title": "CRMI Grouper ValueSet",
+  "status" : "draft",
+  "experimental" : false,
+  "date" : "2023-03-01",
+  "publisher" : "Clinical Decision Support WG",
+  "description" : "Defines a ValueSet that defines a grouping of ValueSets via Compose ValueSet references.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "US"
+        }
+      ]
+    }
+  ],
+  "fhirVersion" : "4.0.1",
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "ValueSet",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
+  "derivation" : "constraint",
+  "differential" : {
+      "element" : [{
+        "id" : "ValueSet",
+        "path" : "ValueSet",
+        "short" : "CRMI Grouper ValueSet",
+        "min" : 1,
+        "max" : "1"
+      },
+      {
+        "id" : "ValueSet.compose",
+        "path" : "ValueSet.compose"
+      },
+      {    
+        "id" : "ValueSet.compose.include",
+        "path" : "ValueSet.compose.include",
+        "min": 1,
+        "max": "*"   
+      },
+      {    
+        "id" : "ValueSet.compose.include.system",
+        "path" : "ValueSet.compose.include.system",
+        "min": 0,
+        "max": "0"   
+      },
+      {    
+        "id" : "ValueSet.compose.include.version",
+        "path" : "ValueSet.compose.include.version",
+        "min": 0,
+        "max": "0"
+      },
+      {    
+        "id" : "ValueSet.compose.include.concept",
+        "path" : "ValueSet.compose.include.concept",
+        "min": 0,
+        "max": "0"
+      },
+      {    
+        "id" : "ValueSet.compose.include.filter",
+        "path" : "ValueSet.compose.include.filter",
+        "min": 0,
+        "max": "0" 
+      },
+      {    
+        "id" : "ValueSet.compose.include.valueset",
+        "path" : "ValueSet.compose.include.valueset",
+        "min": 1,
+        "max": "*" 
+      },
+      {    
+        "id" : "ValueSet.compose.exclude",
+        "path" : "ValueSet.compose.exclude",
+        "min": 0,
+        "max": "0"
+      }
+    ]
+  }
+}

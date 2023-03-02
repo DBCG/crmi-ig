@@ -235,6 +235,11 @@
       <generation value="generated"/>
     </page>
     <page>
+      <nameUrl value="StructureDefinition-crmi-grouperset.html"/>
+      <title value="CRMI Grouper ValueSet"/>
+      <generation value="generated"/>
+    </page>   
+    <page>
       <nameUrl value="StructureDefinition-crmi-hostedvalueset.html"/>
       <title value="CRMI Hosted ValueSet"/>
       <generation value="generated"/>
