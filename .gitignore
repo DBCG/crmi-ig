@@ -7,3 +7,5 @@
 /txCache
 /template
 publisher.jar
+/input-cache
+FHIR-cmi.xml

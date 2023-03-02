@@ -1,0 +1,54 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "crmi-hostedvalueset",
+  "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-hostedvalueset",
+  "version" : "3.0.0",
+  "name" : "CRMIHostedValueSet",
+  "title": "CRMI Hosted ValueSet",
+  "status" : "draft",
+  "experimental" : false,
+  "date" : "2023-03-01",
+  "publisher" : "Clinical Decision Support WG",
+  "description" : "Defines a ValueSet that is meant to be hosted as an enhanced copy in an artifact repository.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "US"
+        }
+      ]
+    }
+  ],
+  "fhirVersion" : "4.0.1",
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "ValueSet",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [{
+      "id" : "ValueSet",
+      "path" : "ValueSet",
+      "short" : "CRMI Hosted ValueSet",
+      "min" : 1,
+      "max" : "1"
+    },
+    {
+        "id": "Library.extension:authoritativeSource",
+        "path": "Library.extension",
+        "sliceName": "authoritativeSource",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/valueset-authoritativeSource"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }]
+  }
+}

@@ -48,6 +48,7 @@ To support packaging, testing, and distribution of measure and library artifacts
 - [Device](StructureDefinition-device-softwaresystem-cmi.html)
 - [Executable Library](StructureDefinition-executable-library-cmi.html)
 - [Executable ValueSet](StructureDefinition-executable-valueset-cmi.html)
+- [Hosted ValueSet](StructureDefinition-crmi-hostedvalueset.html)
 - [Library](StructureDefinition-library-cmi.html)
 - [Measure](StructureDefinition-measure-cmi.html)
 - [Measure Test Case](StructureDefinition-test-case-cmi.html)

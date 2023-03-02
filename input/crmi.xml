@@ -235,6 +235,11 @@
       <generation value="generated"/>
     </page>
     <page>
+      <nameUrl value="StructureDefinition-crmi-hostedvalueset.html"/>
+      <title value="CRMI Hosted ValueSet"/>
+      <generation value="generated"/>
+    </page>    
+    <page>
       <nameUrl value="StructureDefinition-crmi-softwaresystemdevice.html"/>
       <title value="CRMI SoftwareSystem Device"/>
       <generation value="generated"/>
