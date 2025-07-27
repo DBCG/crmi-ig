@@ -161,6 +161,9 @@ For each type of knowledge artifact supported by a PublishableArtifactRepository
     6. context-type-quantity: Returning all artifacts with a use context quantity or range matching the given quantity
     7. context-type-value: Returning all artifacts with a given use context type and value
     8. topic: Returning all artifacts matching the given topic
+4. **SHOULD** support artifact content search:
+    1. _text and _content search parameters (as described in the [base specification](https://hl7.org/fhir/R4/search.html#content))
+    2. In particular, servers **SHOULD** support _content searching in base64 encoded elements including `Library.content.data`
 4. **MAY** support artifact RelatedArtifact searches:
     1. composed-of: Returning all artifacts that have the given artifact as a component
     2. depends-on: Returning all artifacts that have the given artifact as a dependency
