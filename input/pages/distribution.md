@@ -44,12 +44,12 @@ To facilitate this, a downstream system MAY use the `$package` or `$data-require
 
 NOTE: $data-requirements allows the client to decide what is needed to download (versus what might already have been downloaded), whereas $package always ships the actual resources.
 
-Both `$package` and `$data-requirements` operations are available for all canonical resources:
+Both `$package` and `$data-requirements` operations are available for all canonical resources and non-canonical-artifacts:
 
 1. StructureDefinition, StructureMap
 2. ValueSet, CodeSystem, NamingSystem, ConceptMap
 3. Questionnaire, ActivityDefinition, PlanDefinition, Library, Measure
-4. ObservationDefinition, SpecimenDefinition, MedicationKnowledge, etc...
+4. Group, Substance, ObservationDefinition, SpecimenDefinition, MedicationKnowledge, etc...
 
 NOTE: To recreate the contents of a FHIR Package, the `$package` operation could be called on the `ImplementationGuide` resource with appropriate parameters to only include local resources defined in the package (i.e. `packageOnly` set to `true`).
 
@@ -174,6 +174,8 @@ Dependency tracing is the process of determining, given a root artifact, what ot
 In general, the process considers each element of a resource and, if it is a canonical reference, or a reference to an "artifact" resource as described by this implementation guide, it is traced. In addition, extensions used in quality improvement profiles such as Clinical Guidelines and Quality Measures, are considered.
 
 The following sections describe the dependency references for each type of resource. Note that this dependency-listing is not exhaustive, but captures the required dependencies for the quality improvement use case. The [cqf-shouldTraceDependency]({{site.data.fhir.ver.ext}}/StructureDefinition-cqf-shouldTraceDependency.html) extension can be used in the definition of an extension or profile to indicate whether the element should be traced as a dependency for the purposes of packaging and distribution.
+
+This algorithm implies that all dependencies should be reported, including dependencies on base structure definitions. However, because of the way the base resource structure definitions are built, a dependency on any base specification resource effectively results in a dependency on the entire base specification (because of Extension.value[x] and DomainResource.contained). As a result, dependencies on the base specification resources typically do not add any useful information (because the package in which the base specification resources are defined is typically available in a FHIR-based environment anyway), and should be considered implied.
 
 Each section provides a listing of the paths to each element that should be considered as a reference to an artifact (and recursively traced for dependencies as well) using a FHIRPath-like syntax, with abbreviated references to the names of extensions to be followed.
 
