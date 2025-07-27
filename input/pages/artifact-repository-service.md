@@ -39,7 +39,13 @@ The following conceptual actions support artifact authoring, searching, publicat
 
 > NOTE: These are conceptual actions that can be performed in a variety of ways. The purpose of the capability statements is to describe how these actions are actually performed in an API, as either a FHIR RESTful _interaction_ (create, read, update, delete), or FHIR _operation_ (e.g. $package).
 
-For operations that update an artifact, clients and servers **SHALL** ensure that child artifacts are updated consistently whenever any parent artifacts are updated, since child artifacts do not have a lifecycle of their own. When an operation impacts multiple artifacts, a transaction **SHOULD** be used to perform the operation, and a transaction-response bundle **SHOULD** be used to communicate the impact of the changes.
+For operations that update an artifact, clients and servers **SHALL** ensure that child artifacts are updated consistently whenever any parent artifacts are updated, since child artifacts do not have a lifecycle of their own. 
+
+The publication status of child artifacts **SHALL** be consistent with the publication status of the parent, since child artifacts do not have a lifecycle of their own.
+
+In general, child artifacts should not be operated on independently; updates to child artifacts should be done as part of an update to a parent artifact.
+
+When an operation impacts multiple artifacts, a transaction **SHOULD** be used to perform the operation, and a transaction-response bundle **SHOULD** be used to communicate the impact of the changes.
 
 ### Shareable Artifact Repository
 
