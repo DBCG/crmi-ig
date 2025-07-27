@@ -1,9 +1,9 @@
 {
   "resourceType" : "StructureDefinition",
-  "id" : "crmi-publishablestructuremap",
+  "id" : "crmi-publishablesubstance",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
-    "valueInteger" : 1
+    "valueInteger" : 2
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
@@ -13,14 +13,14 @@
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
     "valueCode" : "trial-use"
   }],
-  "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuremap",
-  "name" : "CRMIPublishableStructureMap",
-  "title" : "CRMI Publishable StructureMap",
-  "status" : "draft",
+  "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablesubstance",
+  "name" : "CRMIPublishableSubstance",
+  "title" : "CRMI Publishable Substance",
+  "status" : "active",
   "experimental" : false,
   "date" : "2020-12-28T16:55:11+11:00",
   "publisher" : "HL7",
-  "description" : "Supports declaration of the StructureMap metadata required by HL7 and other organizations that share and publish structure maps with a focus on the aspects of that metadata that are important for post-publication activities including distribution, inclusion in repositories, consumption, and implementation.",
+  "description" : "Supports declaration of the substance metadata required by HL7 and other organizations that share and publish substances with a focus on the aspects of that metadata that are important for post-publication activities including distribution, inclusion in repositories, consumption, and implementation.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "rim",
@@ -44,19 +44,79 @@
   }],
   "kind" : "resource",
   "abstract" : false,
-  "type" : "StructureMap",
-  "baseDefinition" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablestructuremap",
+  "type" : "Substance",
+  "baseDefinition" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-substancedefinition",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
-      "id" : "StructureMap",
-      "path" : "StructureMap",
+      "id" : "Substance",
+      "path" : "Substance",
       "min" : 1,
       "max" : "1"
     },
     {
-      "id" : "StructureMap.extension:usage",
-      "path" : "StructureMap.extension",
+      "id" : "Substance.extension:date",
+      "path" : "Substance.extension",
+      "sliceName" : "date",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-date"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Substance.extension:contact",
+      "path" : "Substance.extension",
+      "sliceName" : "contact",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-contact"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Substance.extension:useContext",
+      "path" : "Substance.extension",
+      "sliceName" : "useContext",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-useContext"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Substance.extension:jurisdiction",
+      "path" : "Substance.extension",
+      "sliceName" : "jurisdiction",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-jurisdiction"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Substance.extension:purpose",
+      "path" : "Substance.extension",
+      "sliceName" : "purpose",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-purpose"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Substance.extension:usage",
+      "path" : "Substance.extension",
       "sliceName" : "usage",
       "min" : 0,
       "max" : "1",
@@ -67,8 +127,20 @@
       "mustSupport" : true
     },
     {
-      "id" : "StructureMap.extension:copyrightLabel",
-      "path" : "StructureMap.extension",
+      "id" : "Substance.extension:copyright",
+      "path" : "Substance.extension",
+      "sliceName" : "copyright",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-copyright"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Substance.extension:copyrightLabel",
+      "path" : "Substance.extension",
       "sliceName" : "copyrightLabel",
       "min" : 0,
       "max" : "1",
@@ -79,8 +151,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "StructureMap.extension:approvalDate",
-      "path" : "StructureMap.extension",
+      "id" : "Substance.extension:approvalDate",
+      "path" : "Substance.extension",
       "sliceName" : "approvalDate",
       "min" : 0,
       "max" : "1",
@@ -91,8 +163,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "StructureMap.extension:lastReviewDate",
-      "path" : "StructureMap.extension",
+      "id" : "Substance.extension:lastReviewDate",
+      "path" : "Substance.extension",
       "sliceName" : "lastReviewDate",
       "min" : 0,
       "max" : "1",
@@ -103,8 +175,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "StructureMap.extension:effectivePeriod",
-      "path" : "StructureMap.extension",
+      "id" : "Substance.extension:effectivePeriod",
+      "path" : "Substance.extension",
       "sliceName" : "effectivePeriod",
       "min" : 0,
       "max" : "1",
@@ -115,8 +187,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "StructureMap.extension:topic",
-      "path" : "StructureMap.extension",
+      "id" : "Substance.extension:topic",
+      "path" : "Substance.extension",
       "sliceName" : "topic",
       "min" : 0,
       "max" : "*",
@@ -127,8 +199,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "StructureMap.extension:author",
-      "path" : "StructureMap.extension",
+      "id" : "Substance.extension:author",
+      "path" : "Substance.extension",
       "sliceName" : "author",
       "min" : 0,
       "max" : "*",
@@ -139,8 +211,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "StructureMap.extension:editor",
-      "path" : "StructureMap.extension",
+      "id" : "Substance.extension:editor",
+      "path" : "Substance.extension",
       "sliceName" : "editor",
       "min" : 0,
       "max" : "*",
@@ -151,8 +223,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "StructureMap.extension:reviewer",
-      "path" : "StructureMap.extension",
+      "id" : "Substance.extension:reviewer",
+      "path" : "Substance.extension",
       "sliceName" : "reviewer",
       "min" : 0,
       "max" : "*",
@@ -163,8 +235,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "StructureMap.extension:endorser",
-      "path" : "StructureMap.extension",
+      "id" : "Substance.extension:endorser",
+      "path" : "Substance.extension",
       "sliceName" : "endorser",
       "min" : 0,
       "max" : "*",
@@ -175,8 +247,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "StructureMap.extension:relatedArtifact",
-      "path" : "StructureMap.extension",
+      "id" : "Substance.extension:relatedArtifact",
+      "path" : "Substance.extension",
       "sliceName" : "relatedArtifact",
       "min" : 0,
       "max" : "*",
@@ -187,40 +259,13 @@
       "mustSupport" : true
     },
     {
-      "id" : "StructureMap.identifier",
-      "path" : "StructureMap.identifier",
+      "id" : "Substance.identifier",
+      "path" : "Substance.identifier",
       "mustSupport" : true
     },
     {
-      "id" : "StructureMap.date",
-      "path" : "StructureMap.date",
-      "min" : 1,
-      "max" : "1",
-      "mustSupport" : true
-    },
-    {
-      "id" : "StructureMap.contact",
-      "path" : "StructureMap.contact",
-      "mustSupport" : true
-    },
-    {
-      "id" : "StructureMap.useContext",
-      "path" : "StructureMap.useContext",
-      "mustSupport" : true
-    },
-    {
-      "id" : "StructureMap.jurisdiction",
-      "path" : "StructureMap.jurisdiction",
-      "mustSupport" : true
-    },
-    {
-      "id" : "StructureMap.purpose",
-      "path" : "StructureMap.purpose",
-      "mustSupport" : true
-    },
-    {
-      "id" : "StructureMap.copyright",
-      "path" : "StructureMap.copyright",
+      "id" : "Substance.code",
+      "path" : "Substance.code",
       "mustSupport" : true
     }]
   }

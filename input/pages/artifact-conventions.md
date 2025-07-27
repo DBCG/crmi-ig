@@ -29,7 +29,7 @@ In addition, all references to canonicals from artifacts in a package to other a
 The `name` element of an artifact **SHOULD**:
 1. Start with an alphabetic character `[A-Za-z]`, followed only by alphanumeric characters `[A-Za-z0-9]` (note no underscores or spaces)
 2. Use PascalCasing (i.e. first letter of every word capitalized)
-3. Be unique within the canonical base and resource type for the artifact to support code generation
+3. Be unique within the canonical base for the artifact to support code generation
 
 In addition, for Knowledge Artifacts (i.e. Library, ActivityDefinition, PlanDefinition, Measure, and Questionnaire), the `name` element **SHOULD**:
 1. Correspond to the _tail_ of the canonical (i.e. everything after the last slash (`/`))
@@ -39,7 +39,7 @@ This is especially important for Library resources that contain CQL, since libra
 For example:
 
 ```
-"url": "http://fhir.org/guides/cqf/common/Library/FHIRCommon",
+"url": "http://hl7.org/fhir/uv/cql/Library/FHIRCommon",
 "name": "FHIRCommon"
 ```
 
@@ -49,7 +49,7 @@ The `title` element of an artifact **SHOULD**:
 1. Correspond to the `name`, but with spaces allowed
 2. Use Title Casing (i.e. first letter of every word capitalized, except for conjunctions and prepositions)
 3. Avoid the use of special characters
-4. Be unique within the canonical base and resource type for the artifact to support human identification
+4. Be unique within the canonical base for the artifact to support human identification
 
 ### Operation definitions
 

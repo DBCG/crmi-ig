@@ -3,7 +3,7 @@
   "id" : "crmi-shareablemedication",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
-    "valueInteger" : 1
+    "valueInteger" : 2
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
@@ -16,7 +16,7 @@
   "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemedication",
   "name" : "CRMIShareableMedication",
   "title" : "CRMI Shareable Medication",
-  "status" : "draft",
+  "status" : "active",
   "experimental" : false,
   "date" : "2020-12-28T16:55:11+11:00",
   "publisher" : "HL7",
@@ -45,7 +45,7 @@
   "kind" : "resource",
   "abstract" : false,
   "type" : "Medication",
-  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Medication",
+  "baseDefinition" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-medicationdefinition",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{

@@ -225,12 +225,6 @@
         "requirements": "Manifests must be able to unambiguously specify the set of components that make up the artifact collection. The version of each component SHALL be included in the canonical reference to the component.",
         "min": 0,
         "max": "*",
-        "constraint": [{
-          "key": "mnf-1",
-          "severity": "error",
-          "human": "Component reference must be either a resourceReference (referencing a canonical promotion) or a canonical (referencing a canonical resource), but not both",
-          "expression": "resource.exists() xor extension('http://hl7.org/fhir/5.0/StructureDefinition/extension-RelatedArtifact.resourceReference').exists()"
-        }],
         "mustSupport": true
       },
       {
@@ -242,21 +236,6 @@
         "type": [{
           "code" : "Extension",
           "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-isOwned"]
-        }],
-        "mustSupport": true
-      },
-      {
-        "id": "Library.relatedArtifact:component.resourceReference",
-        "path": "Library.relatedArtifact.extension",
-        "sliceName": "resourceReference",
-        "short": "A reference to the component artifact (for canonical promotions)",
-        "definition": "A reference to a canonical promotion of a FHIR resource (i.e. a non-canonical resource that has been promoted to a canonical resource so it can be used in definitional contexts).",
-        "min": 0,
-        "max": "1",
-        "condition": [ "mnf-1" ],
-        "type": [{
-          "code": "Extension",
-          "profile": [ "http://hl7.org/fhir/5.0/StructureDefinition/extension-RelatedArtifact.resourceReference" ]
         }],
         "mustSupport": true
       },
@@ -283,16 +262,34 @@
       {
         "id": "Library.relatedArtifact:component.resource",
         "path": "Library.relatedArtifact.resource",
-        "short": "A reference to the component artifact (for canonical resources)",
-        "min": 0,
+        "short": "A reference to the component artifact",
+        "min": 1,
         "max": "1",
-        "condition": [ "mnf-1" ],
         "mustSupport": true
+      },
+      {
+        "id": "Library.relatedArtifact:component.resource.extension:uriReference",
+        "path": "Library.relatedArtifact.resource.extension",
+        "sliceName": "uriReference",
+        "short": "Uri for non-canonical artifact",
+        "definition": "If the reference is to a [non-canonical-artifact](artifact-lifecycle.html#non-canonical-artifacts), this extension is used to provide a canonical-like reference as a uri (e.g. http://example.org/fhir/Group/example|1.0.0).",
+        "min": 0,
+        "max": 1,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/artifact-uriReference"
+            ]
+          }
+        ]
       },
       {
         "id": "Library.relatedArtifact:component.resource.extension:resourceType",
         "path": "Library.relatedArtifact.resource.extension",
         "sliceName": "resourceType",
+        "short": "What type of artifact",
+        "definition": "Because the type of an artifact cannot be reliably inferred from the canonical url, this element specifies the type of artifact.",
         "min": 0,
         "max": 1,
         "type": [
@@ -314,27 +311,6 @@
         "requirements": "Artifacts must be able to unambiguously specify the versions of all dependencies used by artifacts in a specification. The version of each dependency SHALL be included in the canonical reference to the dependency.",
         "min": 0,
         "max": "*",
-        "constraint": [{
-          "key": "mnf-2",
-          "severity": "error",
-          "human": "Dependency reference must be either a resourceReference (referencing a canonical promotion) or a canonical (referencing a canonical resource), but not both",
-          "expression": "resource.exists() xor extension('http://hl7.org/fhir/5.0/StructureDefinition/extension-RelatedArtifact.resourceReference').exists()"
-        }],
-        "mustSupport": true
-      },
-      {
-        "id": "Library.relatedArtifact:dependency.resourceReference",
-        "path": "Library.relatedArtifact.extension",
-        "sliceName": "resourceReference",
-        "short": "A reference to the dependency artifact (for canonical promotions)",
-        "definition": "A reference to a canonical promotion of a FHIR resource (i.e. a non-canonical resource that has been promoted to a canonical resource so it can be used in definitional contexts).",
-        "min": 0,
-        "max": "1",
-        "condition": [ "mnf-2" ],
-        "type": [{
-          "code": "Extension",
-          "profile": [ "http://hl7.org/fhir/5.0/StructureDefinition/extension-RelatedArtifact.resourceReference" ]
-        }],
         "mustSupport": true
       },
       {
@@ -360,16 +336,34 @@
       {
         "id": "Library.relatedArtifact:dependency.resource",
         "path": "Library.relatedArtifact.resource",
-        "short": "A reference to the dependency artifact (for canonical resources)",
-        "min": 0,
+        "short": "A reference to the dependency artifact",
+        "min": 1,
         "max": "1",
-        "condition": [ "mnf-2" ],
         "mustSupport": true
+      },
+      {
+        "id": "Library.relatedArtifact:dependency.resource.extension:uriReference",
+        "path": "Library.relatedArtifact.resource.extension",
+        "sliceName": "uriReference",
+        "short": "Uri for non-canonical artifact",
+        "definition": "If the reference is to a [non-canonical-artifact](artifact-lifecycle.html#non-canonical-artifacts), this extension is used to provide a canonical-like reference as a uri (e.g. http://example.org/fhir/Group/example|1.0.0).",
+        "min": 0,
+        "max": 1,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/artifact-uriReference"
+            ]
+          }
+        ]
       },
       {
         "id": "Library.relatedArtifact:dependency.resource.extension:resourceType",
         "path": "Library.relatedArtifact.resource.extension",
         "sliceName": "resourceType",
+        "short": "What type of artifact",
+        "definition": "Because the type of an artifact cannot be reliably inferred from the canonical url, this element specifies the type of artifact.",
         "min": 0,
         "max": 1,
         "type": [

@@ -1,9 +1,9 @@
 {
   "resourceType" : "StructureDefinition",
-  "id" : "crmi-publishablemedicationknowledge",
+  "id" : "crmi-publishablemedication",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
-    "valueInteger" : 1
+    "valueInteger" : 2
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
@@ -13,14 +13,14 @@
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
     "valueCode" : "trial-use"
   }],
-  "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablemedicationknowledge",
-  "name" : "CRMIPublishableMedicationKnowledge",
-  "title" : "CRMI Publishable MedicationKnowledge",
-  "status" : "draft",
+  "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablemedication",
+  "name" : "CRMIPublishableMedication",
+  "title" : "CRMI Publishable Medication",
+  "status" : "active",
   "experimental" : false,
   "date" : "2020-12-28T16:55:11+11:00",
   "publisher" : "HL7",
-  "description" : "Supports declaration of the medication knowledge metadata required by HL7 and other organizations that share and publish medication knowledge with a focus on the aspects of that metadata that are important for post-publication activities including distribution, inclusion in repositories, consumption, and implementation.",
+  "description" : "Supports declaration of the medication metadata required by HL7 and other organizations that share and publish medications with a focus on the aspects of that metadata that are important for post-publication activities including distribution, inclusion in repositories, consumption, and implementation.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "rim",
@@ -44,31 +44,19 @@
   }],
   "kind" : "resource",
   "abstract" : false,
-  "type" : "MedicationKnowledge",
-  "baseDefinition" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemedicationknowledge",
+  "type" : "Medication",
+  "baseDefinition" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-medicationdefinition",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
-      "id" : "MedicationKnowledge",
-      "path" : "MedicationKnowledge",
+      "id" : "Medication",
+      "path" : "Medication",
       "min" : 1,
       "max" : "1"
     },
     {
-      "id" : "MedicationKnowledge.extension:identifier",
-      "path" : "MedicationKnowledge.extension",
-      "sliceName" : "identifier",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-identifier"]
-      }],
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationKnowledge.extension:date",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Medication.extension:date",
+      "path" : "Medication.extension",
       "sliceName" : "date",
       "min" : 1,
       "max" : "1",
@@ -79,8 +67,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:contact",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Medication.extension:contact",
+      "path" : "Medication.extension",
       "sliceName" : "contact",
       "min" : 0,
       "max" : "*",
@@ -91,8 +79,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:useContext",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Medication.extension:useContext",
+      "path" : "Medication.extension",
       "sliceName" : "useContext",
       "min" : 0,
       "max" : "*",
@@ -103,8 +91,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:jurisdiction",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Medication.extension:jurisdiction",
+      "path" : "Medication.extension",
       "sliceName" : "jurisdiction",
       "min" : 0,
       "max" : "*",
@@ -115,8 +103,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:purpose",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Medication.extension:purpose",
+      "path" : "Medication.extension",
       "sliceName" : "purpose",
       "min" : 0,
       "max" : "1",
@@ -127,8 +115,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:usage",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Medication.extension:usage",
+      "path" : "Medication.extension",
       "sliceName" : "usage",
       "min" : 0,
       "max" : "1",
@@ -139,8 +127,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:copyright",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Medication.extension:copyright",
+      "path" : "Medication.extension",
       "sliceName" : "copyright",
       "min" : 0,
       "max" : "1",
@@ -151,8 +139,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:copyrightLabel",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Medication.extension:copyrightLabel",
+      "path" : "Medication.extension",
       "sliceName" : "copyrightLabel",
       "min" : 0,
       "max" : "1",
@@ -163,8 +151,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:approvalDate",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Medication.extension:approvalDate",
+      "path" : "Medication.extension",
       "sliceName" : "approvalDate",
       "min" : 0,
       "max" : "1",
@@ -175,8 +163,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:lastReviewDate",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Medication.extension:lastReviewDate",
+      "path" : "Medication.extension",
       "sliceName" : "lastReviewDate",
       "min" : 0,
       "max" : "1",
@@ -187,8 +175,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:effectivePeriod",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Medication.extension:effectivePeriod",
+      "path" : "Medication.extension",
       "sliceName" : "effectivePeriod",
       "min" : 0,
       "max" : "1",
@@ -199,8 +187,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:topic",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Medication.extension:topic",
+      "path" : "Medication.extension",
       "sliceName" : "topic",
       "min" : 0,
       "max" : "*",
@@ -211,8 +199,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:author",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Medication.extension:author",
+      "path" : "Medication.extension",
       "sliceName" : "author",
       "min" : 0,
       "max" : "*",
@@ -223,8 +211,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:editor",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Medication.extension:editor",
+      "path" : "Medication.extension",
       "sliceName" : "editor",
       "min" : 0,
       "max" : "*",
@@ -235,8 +223,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:reviewer",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Medication.extension:reviewer",
+      "path" : "Medication.extension",
       "sliceName" : "reviewer",
       "min" : 0,
       "max" : "*",
@@ -247,8 +235,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:endorser",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Medication.extension:endorser",
+      "path" : "Medication.extension",
       "sliceName" : "endorser",
       "min" : 0,
       "max" : "*",
@@ -259,8 +247,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:relatedArtifact",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Medication.extension:relatedArtifact",
+      "path" : "Medication.extension",
       "sliceName" : "relatedArtifact",
       "min" : 0,
       "max" : "*",
@@ -271,8 +259,13 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.code",
-      "path" : "MedicationKnowledge.code",
+      "id" : "Medication.identifier",
+      "path" : "Medication.identifier",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.code",
+      "path" : "Medication.code",
       "mustSupport" : true
     }]
   }

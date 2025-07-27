@@ -1,9 +1,9 @@
 {
   "resourceType" : "StructureDefinition",
-  "id" : "crmi-shareablemedicationknowledge",
+  "id" : "crmi-shareablesubstance",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
-    "valueInteger" : 1
+    "valueInteger" : 2
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
@@ -13,14 +13,14 @@
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
     "valueCode" : "trial-use"
   }],
-  "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemedicationknowledge",
-  "name" : "CRMIShareableMedicationKnowledge",
-  "title" : "CRMI Shareable MedicationKnowledge",
-  "status" : "draft",
+  "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablesubstance",
+  "name" : "CRMIShareableSubstance",
+  "title" : "CRMI Shareable Substance",
+  "status" : "active",
   "experimental" : false,
   "date" : "2020-12-28T16:55:11+11:00",
   "publisher" : "HL7",
-  "description" : "Enforces the minimum information set for the medication knowledge metadata required by HL7 and other organizations that share and publish medication knowledge",
+  "description" : "Enforces the minimum information set for the substance metadata required by HL7 and other organizations that share and publish substances",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "rim",
@@ -44,19 +44,19 @@
   }],
   "kind" : "resource",
   "abstract" : false,
-  "type" : "MedicationKnowledge",
-  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/MedicationKnowledge",
+  "type" : "Substance",
+  "baseDefinition" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-substancedefinition",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
-      "id" : "MedicationKnowledge",
-      "path" : "MedicationKnowledge",
+      "id" : "Substance",
+      "path" : "Substance",
       "min" : 1,
       "max" : "1"
     },
     {
-      "id" : "MedicationKnowledge.extension:knowledgeCapability",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Substance.extension:knowledgeCapability",
+      "path" : "Substance.extension",
       "sliceName" : "knowledgeCapability",
       "min" : 0,
       "max" : "*",
@@ -67,8 +67,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:knowledgeRepresentationLevel",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Substance.extension:knowledgeRepresentationLevel",
+      "path" : "Substance.extension",
       "sliceName" : "knowledgeRepresentationLevel",
       "min" : 0,
       "max" : "*",
@@ -79,8 +79,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:artifactComment",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Substance.extension:artifactComment",
+      "path" : "Substance.extension",
       "sliceName" : "artifactComment",
       "min" : 0,
       "max" : "*",
@@ -91,8 +91,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:url",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Substance.extension:url",
+      "path" : "Substance.extension",
       "sliceName" : "url",
       "min" : 1,
       "max" : "1",
@@ -103,8 +103,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:version",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Substance.extension:version",
+      "path" : "Substance.extension",
       "sliceName" : "version",
       "min" : 1,
       "max" : "1",
@@ -115,8 +115,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:versionAlgorithm",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Substance.extension:versionAlgorithm",
+      "path" : "Substance.extension",
       "sliceName" : "versionAlgorithm",
       "min" : 0,
       "max" : "1",
@@ -127,8 +127,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:versionPolicy",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Substance.extension:versionPolicy",
+      "path" : "Substance.extension",
       "sliceName" : "versionPolicy",
       "min" : 0,
       "max" : "1",
@@ -139,8 +139,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:name",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Substance.extension:name",
+      "path" : "Substance.extension",
       "sliceName" : "name",
       "min" : 0,
       "max" : "1",
@@ -151,8 +151,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:title",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Substance.extension:title",
+      "path" : "Substance.extension",
       "sliceName" : "title",
       "min" : 1,
       "max" : "1",
@@ -163,8 +163,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:experimental",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Substance.extension:experimental",
+      "path" : "Substance.extension",
       "sliceName" : "experimental",
       "min" : 0,
       "max" : "1",
@@ -175,8 +175,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:publisher",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Substance.extension:publisher",
+      "path" : "Substance.extension",
       "sliceName" : "publisher",
       "min" : 0,
       "max" : "1",
@@ -187,8 +187,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "MedicationKnowledge.extension:description",
-      "path" : "MedicationKnowledge.extension",
+      "id" : "Substance.extension:description",
+      "path" : "Substance.extension",
       "sliceName" : "description",
       "min" : 0,
       "max" : "1",
@@ -198,10 +198,17 @@
       }],
       "mustSupport" : true
     },
-  {
-    "id": "MedicationKnowledge.status",
-    "path": "MedicationKnowledge.status",
-    "mustSupport": true
-  }]
+    {
+      "id" : "Substance.modifierExtension:status",
+      "path" : "Substance.modifierExtension",
+      "sliceName" : "status",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-status"]
+      }],
+      "mustSupport" : true
+    }]
   }
 }

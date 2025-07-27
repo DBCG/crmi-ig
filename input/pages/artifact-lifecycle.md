@@ -71,14 +71,56 @@ http://example.org/fhir/Library/ExampleLibrary|1.0.0 // A version-specific refer
 Note that this implementation guide defines profiles for several resources that are not strictly canonical resources (because they do not have a `url` element) but that can be used as knowledge artifacts:
 
 * Group
-* Location
 * Medication
 * MedicationKnowledge
 * Substance
 
+When a resource is being used as a non-canonical artifact, the [artifact-url]({{site.data.fhir.ver.ext}}/StructureDefinition-artifact-url.html) and [artifact-version]({{site.data.fhir.ver.ext}}/StructureDefinition-artifact-version.html) extensions are used to provide a canonical url and version for the resource:
+
+```json
+{
+  "resourceType": "Group",
+  "id": "example-non-canonical-artifact",
+  "extension": [{
+    "url": "http://hl7.org/fhir/StructureDefinition/artifact-url",
+    "valueUri": "http://example.org/fhir/Group/example-non-canonical-artifact"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/artifact-version",
+    "valueString": "1.0.0"
+  }],
+  ...
+}
+```
+
+This allows a "canonical"-like reference to be constructed, following the same rules as a canonical reference to support both version-independent, and version-specific references:
+
+```
+http://example.org/fhir/Group/example-non-canonical-artifact // Version-independent reference
+http://example.org/fhir/Group/example-non-canonical-artifact|1.0.0 // Version-specific reference
+```
+
+Note that because `Group` is _not_ a canonical resource, these references cannot appear in a `canonical-valued` element. Instead, we use the [artifact-uriReference]({{site.data.fhir.ver.ext}}/StructureDefinition-artifact-uriReference.html) extension to construct a reference:
+
+```json
+{
+  "resourceType": "PlanDefinition",
+  ...
+  "subjectReference": {
+    "extension": [{
+      "url": "http://hl7.org/fhir/StructureDefinition/artifact-uriReference",
+      "valueUri": "http://example.org/fhir/Group/example-non-canonical-artifact|1.0.0"
+    }]
+  },
+  ...
+}
+```
+
+This pattern can be used wherever there is a `Reference`- or `canonical`-valued element to refer to a non-canonical artifact. The profiles in this implementation guide make use of this extension to provide this support.
+
 In addition, there are several domain-level resources that are used in a definitional way as part of knowledge artifacts by referring to profiles of these artifacts:
 
 * CareTeam
+* Location
 * Practitioner
 * PractitionerRole
 * Organization

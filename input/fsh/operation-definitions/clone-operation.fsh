@@ -6,7 +6,7 @@ Usage: #definition
 * url = "http://hl7.org/fhir/uv/crmi/OperationDefinition/crmi-clone"
 * name = "CRMIClone"
 * title = "CRMI Clone"
-* description = "Creates a clone version of a knowledge artifact, as well as for all resources it is composed of."
+* description = "Creates a clone of a knowledge artifact and all its children."
 * kind = #operation
 * code = #clone
 * comment = "This operation is used to set the status and version. It also removes effectivePeriod, approvalDate and any extensions which are only valid for active artifacts."

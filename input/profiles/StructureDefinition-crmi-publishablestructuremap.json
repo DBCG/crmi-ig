@@ -1,6 +1,6 @@
 {
   "resourceType" : "StructureDefinition",
-  "id" : "crmi-publishablemedication",
+  "id" : "crmi-publishablestructuremap",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
     "valueInteger" : 1
@@ -13,14 +13,14 @@
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
     "valueCode" : "trial-use"
   }],
-  "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablemedication",
-  "name" : "CRMIPublishableMedication",
-  "title" : "CRMI Publishable Medication",
-  "status" : "draft",
+  "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablestructuremap",
+  "name" : "CRMIPublishableStructureMap",
+  "title" : "CRMI Publishable StructureMap",
+  "status" : "active",
   "experimental" : false,
   "date" : "2020-12-28T16:55:11+11:00",
   "publisher" : "HL7",
-  "description" : "Supports declaration of the medication metadata required by HL7 and other organizations that share and publish medications with a focus on the aspects of that metadata that are important for post-publication activities including distribution, inclusion in repositories, consumption, and implementation.",
+  "description" : "Supports declaration of the StructureMap metadata required by HL7 and other organizations that share and publish structure maps with a focus on the aspects of that metadata that are important for post-publication activities including distribution, inclusion in repositories, consumption, and implementation.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "rim",
@@ -44,79 +44,19 @@
   }],
   "kind" : "resource",
   "abstract" : false,
-  "type" : "Medication",
-  "baseDefinition" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemedication",
+  "type" : "StructureMap",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/StructureMap",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
-      "id" : "Medication",
-      "path" : "Medication",
+      "id" : "StructureMap",
+      "path" : "StructureMap",
       "min" : 1,
       "max" : "1"
     },
     {
-      "id" : "Medication.extension:date",
-      "path" : "Medication.extension",
-      "sliceName" : "date",
-      "min" : 1,
-      "max" : "1",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-date"]
-      }],
-      "mustSupport" : true
-    },
-    {
-      "id" : "Medication.extension:contact",
-      "path" : "Medication.extension",
-      "sliceName" : "contact",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-contact"]
-      }],
-      "mustSupport" : true
-    },
-    {
-      "id" : "Medication.extension:useContext",
-      "path" : "Medication.extension",
-      "sliceName" : "useContext",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-useContext"]
-      }],
-      "mustSupport" : true
-    },
-    {
-      "id" : "Medication.extension:jurisdiction",
-      "path" : "Medication.extension",
-      "sliceName" : "jurisdiction",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-jurisdiction"]
-      }],
-      "mustSupport" : true
-    },
-    {
-      "id" : "Medication.extension:purpose",
-      "path" : "Medication.extension",
-      "sliceName" : "purpose",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-purpose"]
-      }],
-      "mustSupport" : true
-    },
-    {
-      "id" : "Medication.extension:usage",
-      "path" : "Medication.extension",
+      "id" : "StructureMap.extension:usage",
+      "path" : "StructureMap.extension",
       "sliceName" : "usage",
       "min" : 0,
       "max" : "1",
@@ -127,20 +67,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "Medication.extension:copyright",
-      "path" : "Medication.extension",
-      "sliceName" : "copyright",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-copyright"]
-      }],
-      "mustSupport" : true
-    },
-    {
-      "id" : "Medication.extension:copyrightLabel",
-      "path" : "Medication.extension",
+      "id" : "StructureMap.extension:copyrightLabel",
+      "path" : "StructureMap.extension",
       "sliceName" : "copyrightLabel",
       "min" : 0,
       "max" : "1",
@@ -151,8 +79,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "Medication.extension:approvalDate",
-      "path" : "Medication.extension",
+      "id" : "StructureMap.extension:approvalDate",
+      "path" : "StructureMap.extension",
       "sliceName" : "approvalDate",
       "min" : 0,
       "max" : "1",
@@ -163,8 +91,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "Medication.extension:lastReviewDate",
-      "path" : "Medication.extension",
+      "id" : "StructureMap.extension:lastReviewDate",
+      "path" : "StructureMap.extension",
       "sliceName" : "lastReviewDate",
       "min" : 0,
       "max" : "1",
@@ -175,8 +103,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "Medication.extension:effectivePeriod",
-      "path" : "Medication.extension",
+      "id" : "StructureMap.extension:effectivePeriod",
+      "path" : "StructureMap.extension",
       "sliceName" : "effectivePeriod",
       "min" : 0,
       "max" : "1",
@@ -187,8 +115,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "Medication.extension:topic",
-      "path" : "Medication.extension",
+      "id" : "StructureMap.extension:topic",
+      "path" : "StructureMap.extension",
       "sliceName" : "topic",
       "min" : 0,
       "max" : "*",
@@ -199,8 +127,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "Medication.extension:author",
-      "path" : "Medication.extension",
+      "id" : "StructureMap.extension:author",
+      "path" : "StructureMap.extension",
       "sliceName" : "author",
       "min" : 0,
       "max" : "*",
@@ -211,8 +139,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "Medication.extension:editor",
-      "path" : "Medication.extension",
+      "id" : "StructureMap.extension:editor",
+      "path" : "StructureMap.extension",
       "sliceName" : "editor",
       "min" : 0,
       "max" : "*",
@@ -223,8 +151,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "Medication.extension:reviewer",
-      "path" : "Medication.extension",
+      "id" : "StructureMap.extension:reviewer",
+      "path" : "StructureMap.extension",
       "sliceName" : "reviewer",
       "min" : 0,
       "max" : "*",
@@ -235,8 +163,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "Medication.extension:endorser",
-      "path" : "Medication.extension",
+      "id" : "StructureMap.extension:endorser",
+      "path" : "StructureMap.extension",
       "sliceName" : "endorser",
       "min" : 0,
       "max" : "*",
@@ -247,8 +175,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "Medication.extension:relatedArtifact",
-      "path" : "Medication.extension",
+      "id" : "StructureMap.extension:relatedArtifact",
+      "path" : "StructureMap.extension",
       "sliceName" : "relatedArtifact",
       "min" : 0,
       "max" : "*",
@@ -259,13 +187,40 @@
       "mustSupport" : true
     },
     {
-      "id" : "Medication.identifier",
-      "path" : "Medication.identifier",
+      "id" : "StructureMap.identifier",
+      "path" : "StructureMap.identifier",
       "mustSupport" : true
     },
     {
-      "id" : "Medication.code",
-      "path" : "Medication.code",
+      "id" : "StructureMap.date",
+      "path" : "StructureMap.date",
+      "min" : 1,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "StructureMap.contact",
+      "path" : "StructureMap.contact",
+      "mustSupport" : true
+    },
+    {
+      "id" : "StructureMap.useContext",
+      "path" : "StructureMap.useContext",
+      "mustSupport" : true
+    },
+    {
+      "id" : "StructureMap.jurisdiction",
+      "path" : "StructureMap.jurisdiction",
+      "mustSupport" : true
+    },
+    {
+      "id" : "StructureMap.purpose",
+      "path" : "StructureMap.purpose",
+      "mustSupport" : true
+    },
+    {
+      "id" : "StructureMap.copyright",
+      "path" : "StructureMap.copyright",
       "mustSupport" : true
     }]
   }
