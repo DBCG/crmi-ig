@@ -146,7 +146,7 @@ Note that when a code system authority has not established a versioning system, 
     6. valueset: Returning any valueset that references or is referenced by the given valueset url (optionally versioned)
     7. library: Returning any valueset that is referenced by the given library url (optionally versioned)
     8. artifact: Returning any valueset that directly or indirectly references or is referenced by the given artifact url (optionally versioned)
-    9. Servers **SHOULD** support the _text and _content search parameters (as described in the [base specification](http://hl7.org/fhir/R4/search.html#text)
+    9. Servers **SHOULD** support the _text and _content search parameters (as described in the [base specification](http://hl7.org/fhir/R4/search.html#text))
 
 10. **SHALL** Support [ValueSet/$validate-code](http://hl7.org/fhir/R4/valueset-operation-validate-code.html)
     1. **SHALL** support the url parameter

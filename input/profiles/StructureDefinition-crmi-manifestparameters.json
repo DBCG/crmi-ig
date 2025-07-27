@@ -307,7 +307,7 @@
         "id": "Parameters.parameter:canonicalVersion",
         "path": "Parameters.parameter",
         "sliceName": "canonicalVersion",
-        "short": "Artifact version (deprecated, use default-canonical-version)",
+        "short": "Canonical version (deprecated, use default-canonical-version)",
         "definition": "Specifies a version to use for an artifact, if the reference does not specify which one to use (i.e. is a version-independent reference). The format is the same as a versioned canonical reference: [artifact-url]|[version] - e.g. http://example.org/StructureDefinition/example|1.0.0",
         "comment": "In CRMI 1.0, this parameter was proposed as a generalization that could be used to specify canonical version for any artifact. In CRMI 2.0, the parameter is default-canonical-version, and is only used for artifacts other than code systems and value sets.",
         "min": 0,
@@ -362,7 +362,7 @@
         "id": "Parameters.parameter:default-canonical-version",
         "path": "Parameters.parameter",
         "sliceName": "default-canonical-version",
-        "short": "Artifact version",
+        "short": "Canonical version",
         "definition": "Specifies a version to use for an artifact, if the reference does not specify which one to use (i.e. is a version-independent reference). The format is the same as a versioned canonical reference: [artifact-url]|[version] - e.g. http://example.org/StructureDefinition/example|1.0.0",
         "comment": "This parameter specifies the version to use for any canonical type of canonical artifact. For legacy reasons, the system-version (deprecated) and default-system-version parameters are used for CodeSystem references, and the default-valueset-version parameter is used for ValueSet references.",
         "min": 0,
@@ -394,6 +394,23 @@
             "code": "Extension",
             "profile": [
               "http://hl7.org/fhir/StructureDefinition/display"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Parameters.parameter:default-canonical-version.value[x].extension:uriReference",
+        "path": "Parameters.parameter.value[x].extension",
+        "sliceName": "uriReference",
+        "short": "Uri for non-canonical artifact",
+        "definition": "If the reference is to a [non-canonical-artifact](artifact-lifecycle.html#non-canonical-artifacts), this extension is used to provide a canonical-like reference as a uri (e.g. http://example.org/fhir/Group/example|1.0.0).",
+        "min": 0,
+        "max": 1,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/artifact-uriReference"
             ]
           }
         ]
