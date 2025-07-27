@@ -255,6 +255,7 @@ Note that when a code system authority has not established a versioning system, 
     4. ValueSet read
     6. ValueSet search
     7. ValueSet/$validate-code
+    8. ValueSet/$expand
 
 3. Services **MAY** require authentication. If authentication is required, it **SHALL** be in the form of an authentication header (usually a bearer token) that the user can determine in advance and provide to their FHIR tooling in some configuration.
 
