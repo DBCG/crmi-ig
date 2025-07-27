@@ -41,7 +41,7 @@ The following conceptual actions support artifact authoring, searching, publicat
 
 For operations that update an artifact, clients and servers **SHALL** ensure that child artifacts are updated consistently whenever any parent artifacts are updated, since child artifacts do not have a lifecycle of their own. 
 
-The publication status of child artifacts **SHALL** be consistent with the publication status of the parent, since child artifacts do not have a lifecycle of their own.
+The publication `status` and `version` of child artifacts **SHALL** be consistent with the publication `status` and `version` of the parent, since child artifacts do not have a lifecycle of their own.
 
 In general, child artifacts should not be operated on independently; updates to child artifacts should be done as part of an update to a parent artifact.
 
