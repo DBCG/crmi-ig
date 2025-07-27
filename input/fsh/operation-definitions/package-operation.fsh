@@ -96,6 +96,12 @@ elements in packaged content; `publishable` to include publishable elements in
 packaged content.
 
 If no capabilities are specified, the capabilities of resulting artifacts in the package are decided by the server.
+If a server has been requested to produce an executable package, and for whatever reason, cannot expand a value set 
+that is part of the package, it SHALL include an operation outcome warning detailed the value sets that could not be
+expanded, as described in the [Outcome Manifest](distribution.html#outcome-manifest) topic.
+
+In addition, so long as the errorBehavior parameter is not `strict`, the server MAY include a computable representation of
+value sets that could not be expanded.
 """
 
 * parameter[+]
