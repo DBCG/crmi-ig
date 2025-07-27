@@ -1,0 +1,134 @@
+{
+    "resourceType": "Library",
+    "id": "outcome-manifest-example",
+    "meta": {
+      "profile": [
+        "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-manifestlibrary"
+      ]
+    },
+    "contained": [
+      {
+        "resourceType": "OperationOutcome",
+        "id": "messages",
+        "issue": [
+          {
+            "severity": "warning",
+            "code": "processing",
+            "details": {
+              "text": "Could not expand the value set Danger signs Codes Grouper, but the definition of the value set is still included in the resulting package."
+            },
+            "expression": "Library.relatedArtifact.where(type='composed-of' and url='http://hl7.org/fhir/uv/crmi/ValueSet/publishable-example').resolve()"
+          }
+        ]
+      }, 
+      {
+        "resourceType": "Parameters",
+        "id": "exp-params",
+        "parameter": [
+          {
+            "name" : "system-version",
+            "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20190901"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/cqf-messages",
+        "valueReference": {
+          "reference": "#messages"
+        }
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/cqf-expansionParameters",
+        "valueReference": {
+          "reference": "#exp-params"
+        }
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/cqf-scope",
+        "valueString": "who.fhir.ancm.anc-dt-01@http://fhir.org/guides/who/ancm#1.0.0"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/cqf-artifactComment",
+        "extension": [{
+          "url": "type",
+          "valueCode": "documentation"
+        }, {
+          "url": "text",
+          "valueMarkdown": "For more information on the use of this manifest, refer to the Canonical Resource Management Infrastructure IG"
+        }]
+      }
+    ],
+    "url": "http://hl7.org/fhir/uv/crmi/Library/outcome-manifest-example",
+    "name": "OutcomeManifest for ANCMDangerSignsPackage",
+    "title": "Outcome Manifest for ANCM Danger Signs Package",
+    "status": "active",
+    "experimental": true,
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/library-type",
+          "code": "asset-collection"
+        }
+      ]
+    },
+    "date": "2020-05-07",
+    "publisher": "Health Level 7 International - Clinical Quality Information Work Group",
+    "contact": [
+      {
+        "telecom": [
+          {
+            "system": "url",
+            "value": "http://www.hl7.org/Special/committees/cqi/index.cfm"
+          }
+        ]
+      }
+    ],
+    "jurisdiction": [{
+      "coding": [{
+        "system": "urn:iso:std:iso:3166",
+        "code": "US"
+      }]
+    }],
+    "description": "This library is the outcome manifest for the example ANCM Danger Signs Package.",
+    "useContext": [
+      {
+        "code": {
+          "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+          "code": "program"
+        },
+        "valueCodeableConcept": {
+          "text": "EP/EC"
+        }
+      }
+    ],
+    "relatedArtifact": [
+      {
+        "type": "derived-from",
+        "resource": "http://hl7.org/fhir/uv/crmi/Library/manifest-example|1.0.0",
+        "display": "Library ANCM Danger Signs Package, version 1.0.0"
+      },
+      {
+        "type": "depends-on",
+        "resource": "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20190901",
+        "display": "Code System SNOMED-CT US Edition, 2019-09-01"
+      },
+      {
+        "type": "composed-of",
+        "resource": "http://hl7.org/fhir/uv/crmi/StructureDefinition/publishable-example",
+        "display": "Profile Danger signs"
+      },
+      {
+        "type": "composed-of",
+        "resource": "http://hl7.org/fhir/uv/crmi/PlanDefinition/publishable-example",
+        "display":"PlanDefinition ANC.DT.01 Danger signs"
+      },
+      {
+        "type": "composed-of",
+        "resource": "http://hl7.org/fhir/uv/crmi/ValueSet/publishable-example",
+        "display": "Danger Signs Grouper ValueSet"
+      }
+    ]
+  }
+  

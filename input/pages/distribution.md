@@ -53,6 +53,29 @@ Both `$package` and `$data-requirements` operations are available for all canoni
 
 NOTE: To recreate the contents of a FHIR Package, the `$package` operation could be called on the `ImplementationGuide` resource with appropriate parameters to only include local resources defined in the package (i.e. `packageOnly` set to `true`).
 
+#### Outcome Manifest
+
+The first entry in the resulting Bundle will be an _outcome manifest_ that completely characterizes the returned bundle, as well as describes any issues that arose during the packaging.
+
+For example, if a ValueSet cannot be expanded as part of the packaging, the following issue may appear in the outcome manifest:
+
+```json
+"issue": [
+  {
+    "severity": "warning",
+    "code": "processing",
+    "details": {
+      "text": "Could not expand the value set Danger signs Codes Grouper, but the definition of the value set is still included in the resulting package."
+    },
+    "expression": "Library.relatedArtifact.where(type='composed-of' and url='http://hl7.org/fhir/uv/crmi/ValueSet/publishable-example').resolve()"
+  }
+]
+```
+
+The expression here is a FHIRPath from the perspective of the Outcome Manifest library.
+
+For a complete example of an outcome manifest, see the [Outcome Manifest Example](Library-outcome-manifest-example.html).
+
 ### $license-requirements
 
 It is common for knowledge artifacts to depend on other artifacts, which in turn depend on other artifacts. There may be different copyright owners along this dependency tree of artifacts. To ensure license compliance, we need a way to inventory the license information for an artifact and all of it's dependencies.

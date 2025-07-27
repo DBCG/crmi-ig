@@ -188,7 +188,6 @@
         "short": "Where to access artifacts",
         "definition": "A reference to a contained Parameters resource that specifies configuration for determining where artifact content can be accessed, based on the canonical url of the artifact.", 
         "comment": "The endpoint configuration is used to specify where consumers can download source of truth content for the artifacts referenced by this manifest. For a complete package, this is informational, but for a partial package, or when consumers only have the manifest, this information provides a way to determine where to access artifact content. For example, this information can be used to describe a preferred terminology server for the value sets referenced by an artifact. For more information on how this configuration information is used, see the [Artifact Endpoint Configurable Operation Profile](StructureDefinition-crmi-artifact-endpoint-configurable-operation.html).",
-        "alias": ["manifestParameters"],
         "min": 0,
         "max": "1",
         "type": [
@@ -212,6 +211,25 @@
             ]
           }
         ]
+      },
+      {
+        "id": "Library.extension:messages",
+        "path": "Library.extension",
+        "sliceName": "messages",
+        "short": "What messages from packaging",
+        "definition": "A reference to a contained OperationOutcome that provides any information, warning, or error messages that were encountered while packaging the artifact. Each issue encountered is recorded as a new `issue` element in the OperationOutcome, with an expression that traces to the resource that produced the message through the outcome manifest.", 
+        "comment": "As an example, if a ValueSet cannot be expanded, the ValueSet may still be included as a component in the resulting Outcome Manifest, with an issue in the OperationOutcome indicating the value set could not be expanded. The expression of the issue would look something like: `relatedArtifact.where(type='composed-of' and resource='http://example.org/fhir/ValueSet/123|1.0.0')`",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/cqf-inputParameters"
+            ]
+          }
+        ],
+        "mustSupport": true
       },
       {
         "id": "Library.type",

@@ -8,7 +8,7 @@ Usage: #definition
 * status = #active
 * description = """
 Packages a specified canonical resource for use in a target environment, optionally 
-including related content such as dependencies, components, and testing cases and data.
+including related content such as dependencies, components, and test cases and data.
 
 See [$package and $data-requirements](distribution.html#package-and-data-requirements)
 """
@@ -286,6 +286,24 @@ include resources regardless of what implementation guide or specification they 
 """
 
 * parameter[+]
+  * name = #errorBehavior
+  * min = 0
+  * max = "1"
+  * use = #in
+  * type = #code
+  * documentation = """
+A code that determines whether issues encountered during the packaging should prevent the return of the package, or should
+just be included in the resulting package with a description of the issues. A code of `loose` indicates that the server 
+should continue processing and return any issues such as "resource not found" and "could not expand value set" as issues in
+the messages element of the resulting outcome manifest, whereas a code of `strict` indicates that if the server cannot '
+provide the package that was requested, an error should be returned. (i.e. the result of the operation will be an OperationOutcome
+resource describing the issues that occurred, as opposed to the OperationOutcome being included in the result). Note that servers
+may still decide what constitutes an error severe enough to stop processing, this error behavior parameter is an indication from the
+client that they want as much of the package as the server can provide, and will examine the messages to determine where the package 
+differs from what was requested.
+"""
+
+* parameter[+]
   * name = #artifactEndpointConfiguration
   * documentation = """
 Configuration information to resolve canonical artifacts
@@ -349,7 +367,9 @@ OperationDefinition.
   * documentation = """
 An endpoint to use to access terminology (i.e. valuesets, codesystems, naming systems, concept maps, and
 membership testing) referenced by the Resource. If no terminology endpoint is
-supplied, the server may use whatever mechanism is appropriate for accessing terminology. This could be the server on which the operation is invoked or a third party server accessible to the environment. When a terminology endpoint is provided, the server or third party servers may still be used as fallbacks.
+supplied, the server may use whatever mechanism is appropriate for accessing terminology. 
+This could be the server on which the operation is invoked or a third party server accessible to the environment. 
+When a terminology endpoint is provided, the server or third party servers may still be used as fallbacks.
 """
 
 // Output parameter
@@ -361,6 +381,10 @@ supplied, the server may use whatever mechanism is appropriate for accessing ter
   * type = #Bundle
   * documentation = """
   The result of the packaging. If the resulting bundle is paged using `count` or `offset`, it will be of type `collection`. In the special case where `count = 0` it will be of type `searchset`.
+
+  The first resource returned in the resulting package will be an [_outcome manifest_](distribution.html#outcome-manifest) 
+  that describes the results of the packaging operation. Clients consuming package bundles SHALL examine the contents of 
+  these OperationOutcome resources to understand whether the bundle contains the expected content (e.g. if a ValueSet could not be expanded).
   
   Servers generating packages SHALL include all the
   dependency resources referenced by the artifact that are known to the server and 
