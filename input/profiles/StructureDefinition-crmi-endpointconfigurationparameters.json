@@ -1,0 +1,196 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "crmi-endpointconfigurationparameters",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+      "valueInteger": 2
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "cds"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+      "valueCode": "trial-use"
+    }
+  ],
+  "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-endpointconfigurationparameters",
+  "name": "CRMIEndpointConfigurationParameters",
+  "title": "CRMI Endpoint Configuration Parameters",
+  "status": "active",
+  "experimental": false,
+  "publisher": "Clinical Decision Support WG",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/dss/index.cfm"
+        }
+      ]
+    }
+  ],
+  "description": "The CRMI Endpoint Configuration Parameters Profile defines parameters used to determine an endpoint where artifact content can be accessed based on the canonical url for the artifact. See the [Artifact Endpoint Configurable operation profile](StructureDefinition-crmi-artifact-endpoint-configurable-operation.html) for more information on how these parameters are used to determine an endpoint for a given canonical reference.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "001"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "objimpl",
+      "uri": "http://hl7.org/fhir/object-implementation",
+      "name": "Object Implementation Information"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Parameters",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Parameters",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Parameters",
+        "path": "Parameters",
+        "mustSupport": false
+      },
+      {
+        "id": "Parameters.parameter",
+        "path": "Parameters.parameter",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "name"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Parameters.parameter:artifactEndpointConfiguration",
+        "path": "Parameters.parameter",
+        "sliceName": "artifactEndpointConfiguration",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:artifactEndpointConfiguration.name",
+        "path": "Parameters.parameter.name",
+        "fixedCode": "artifactEndpointConfiguration"
+      },
+      {
+        "id": "Parameters.parameter:artifactEndpointConfiguration.part",
+        "path": "Parameters.parameter.part",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "name"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Parameters.parameter:artifactEndpointConfiguration.part:artifactRoute",
+        "path": "Parameters.parameter.part",
+        "sliceName": "artifactRoute",
+        "short": "What route",
+        "definition": "An optional route used to determine whether this endpoint is expected to be able to resolve artifacts that match the route (i.e. start with the route, up to and including the entire url)",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:artifactEndpointConfiguration.part:artifactRoute.name",
+        "path": "Parameters.parameter.part.name",
+        "fixedString": "artifactRoute"
+      },
+      {
+        "id": "Parameters.parameter:artifactEndpointConfiguration.part:artifactRoute.value[x]",
+        "path": "Parameters.parameter.part.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "uri"
+          }
+        ]
+      },
+      {
+        "id": "Parameters.parameter:artifactEndpointConfiguration.part:endpointUri",
+        "path": "Parameters.parameter.part",
+        "sliceName": "endpointUri",
+        "short": "Where to access content (as a uri)",
+        "definition": "The URI of the endpoint, exclusive with the `endpoint` parameter",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:artifactEndpointConfiguration.part:endpointUri.name",
+        "path": "Parameters.parameter.part.name",
+        "fixedString": "endpointUri"
+      },
+      {
+        "id": "Parameters.parameter:artifactEndpointConfiguration.part:endpointUri.value[x]",
+        "path": "Parameters.parameter.part.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "uri"
+          }
+        ]
+      },
+      {
+        "id": "Parameters.parameter:artifactEndpointConfiguration.part:endpoint",
+        "path": "Parameters.parameter.part",
+        "sliceName": "endpoint",
+        "short": "Where to access content (as an Endpoint)",
+        "definition": "An Endpoint resource describing the endpoint, exclusive with the `endpointUri` parameter",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:artifactEndpointConfiguration.part:endpoint.name",
+        "path": "Parameters.parameter.part.name",
+        "fixedString": "endpoint"
+      },
+      {
+        "id": "Parameters.parameter:artifactEndpointConfiguration.part:endpoint.resource",
+        "path": "Parameters.parameter.part.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Endpoint"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -225,6 +225,66 @@ The package source is important for determining the manifest (which dictates the
 {: #conformance-requirement-3-6}
 1. Artifacts **SHOULD** indicate their package source
 
+##### Artifact Endpoint Configuration
+{: #artifact-endpoint-configuration}
+
+A Manifest Library can optionally provide information about how to determine where content can be accessed, based on the canonical URL for the content. Several of the operations defined in this implementation guide support providing this endpoint configuration information as a parameter to the operation, as described in the [Artifact Endpoint Configurable](StructureDefinition-crmi-artifact-endpoint-configurable-operation.html) operation profile, but this information can also be provided as part of a Manifest Library using the [crmi-endpointConfiguration](StructureDefinition-crmi-endpointConfiguration.html) extension:
+
+```json
+{
+  "resourceType": "Parameters",
+  "id" : "endpoints",
+  "parameter" : [{
+    "name": "artifactEndpointConfiguration",
+    "part": [{
+      "name" : "artifactRoute",
+      "valueUri" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1167|20220820"
+    }, {
+      "name" : "endpointUri",
+      "valueUri" : "https://example.org/fhir/"
+    }]
+  }, {
+    "name": "artifactEndpointConfiguration",
+    "part": [{
+      "name" : "artifactRoute",
+      "valueUri" : "http://cts.nlm.nih.gov/fhir/"
+    }, {
+      "name" : "endpointUri",
+      "valueUri" : "https://uat-cts.nlm.nih.gov/fhir/"
+    }]
+  }, {
+    "name": "artifactEndpointConfiguration",
+    "part": [{
+      "name" : "artifactRoute",
+      "valueUri" : "http://terminology.hl7.org/"
+    }, {
+      "name" : "endpointUri",
+      "valueUri" : "https://tx.fhir.org/r4/"
+    }]
+  }, {
+    "name": "artifactEndpointConfiguration",
+    "part": [{
+      "name" : "artifactRoute",
+      "valueUri" : "http://hl7.org/fhir/"
+    }, {
+      "name" : "endpointUri",
+      "valueUri" : "https://tx.fhir.org/r4/"
+    }]
+  }]
+}
+```
+
+This `endpoints` Parameters resource is contained in the manifest library, and referenced by the `crmi-endpointConfiguration` extension:
+
+```json
+{
+  "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-endpointConfiguration",
+  "valueReference" : {
+    "reference" : "#endpoints"
+  }
+}
+```
+
 ##### Components vs dependencies
 
 A _component_ artifact is an artifact that is designated specifically as part of a collection, whereas a _dependency_ is an artifact that is referenced by another artifact. The distinction is drawn to ensure that dependencies can always be calculated by tracing artifact dependencies, whereas components always need to be specified (i.e. they are the designated components of the collection).

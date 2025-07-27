@@ -182,6 +182,38 @@
         ]
       },
       {
+        "id": "Library.extension:endpointConfiguration",
+        "path": "Library.extension",
+        "sliceName": "endpoints",
+        "short": "Where to access artifacts",
+        "definition": "A reference to a contained Parameters resource that specifies configuration for determining where artifact content can be accessed, based on the canonical url of the artifact.", 
+        "comment": "The endpoint configuration is used to specify where consumers can download source of truth content for the artifacts referenced by this manifest. For a complete package, this is informational, but for a partial package, or when consumers only have the manifest, this information provides a way to determine where to access artifact content. For example, this information can be used to describe a preferred terminology server for the value sets referenced by an artifact. For more information on how this configuration information is used, see the [Artifact Endpoint Configurable Operation Profile](StructureDefinition-crmi-artifact-endpoint-configurable-operation.html).",
+        "alias": ["manifestParameters"],
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-endpointConfiguration"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Library.extension:endpointConfiguration.value[x]",
+        "path": "Library.extension.value[x]",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-endpointconfigurationparameters"
+            ]
+          }
+        ]
+      },
+      {
         "id": "Library.type",
         "path": "Library.type",
         "min": 1,

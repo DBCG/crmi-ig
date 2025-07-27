@@ -64,6 +64,98 @@
           "profile" : ["http://hl7.org/fhir/StructureDefinition/cqf-expansionParameters"]
         }],
         "mustSupport" : true
+      },
+      {
+        "id": "ImplementationGuide.extension:expansionParameters.value[x]",
+        "path": "ImplementationGuide.extension.value[x]",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-manifestparameters"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ImplementationGuide.extension:inputParameters",
+        "path": "ImplementationGuide.extension",
+        "sliceName": "inputParameters",
+        "short": "What author-pinned dependency versions",
+        "definition": "A reference to a contained Parameters resource that specifies versions of canonical dependencies (i.e. pinned canonicals) that were explicitly specified as input parameters by the authors. This is typically, but not always, used to specify the versions of external code systems such as SNOMED and LOINC.", 
+        "comment": "The input parameters are captured as part of the release process to support distinguishing between canonical dependencies in the expansion parameters that were pinned by authors versus by the release/pinning process.",
+        "alias": ["authoredParameters"],
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/cqf-inputParameters"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ImplementationGuide.extension:inputParameters.value[x]",
+        "path": "ImplementationGuide.extension.value[x]",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-manifestparameters"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ImplementationGuide.extension:endpointConfiguration",
+        "path": "ImplementationGuide.extension",
+        "sliceName": "endpoints",
+        "short": "Where to access artifacts",
+        "definition": "A reference to a contained Parameters resource that specifies configuration for determining where artifact content can be accessed, based on the canonical url of the artifact.", 
+        "comment": "The endpoint configuration is used to specify where consumers can download source of truth content for the artifacts referenced by this manifest. For a complete package, this is informational, but for a partial package, or when consumers only have the manifest, this information provides a way to determine where to access artifact content. For example, this information can be used to describe a preferred terminology server for the value sets referenced by an artifact. For more information on how this configuration information is used, see the [Artifact Endpoint Configurable Operation Profile](StructureDefinition-crmi-artifact-endpoint-configurable-operation.html).",
+        "alias": ["manifestParameters"],
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-endpointConfiguration"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ImplementationGuide.extension:endpointConfiguration.value[x]",
+        "path": "ImplementationGuide.extension.value[x]",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-endpointconfigurationparameters"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ImplementationGuide.extension:cqlOptions",
+        "path": "ImplementationGuide.extension",
+        "sliceName": "cqlOptions",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/cqf-cqlOptions"
+            ]
+          }
+        ],
+        "mustSupport": true
       }]
     }
   }
