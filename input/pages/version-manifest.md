@@ -187,7 +187,7 @@ For example, given the following reference to a ValueSet:
     {
       "type": "depends-on",
       "display": "Value set Mammography",
-      "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1018"
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1018"
     }
   ]
 }
@@ -204,7 +204,7 @@ And the following example manifest:
     {
       "type": "depends-on",
       "display": "Value set Mammography",
-      "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1018|20200505"
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1018|20200505"
     }
   ]
 }
