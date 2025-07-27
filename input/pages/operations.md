@@ -33,12 +33,12 @@ These operations are defined to support artifact authoring capabilities expected
 
 | **Operation** | **Description** |
 |----|----|
-| [CRMI Approve](OperationDefinition-crmi-approve.html) | The approve operation supports applying an approval to an existing artifact, regardless of status. The operation sets the date and approvalDate elements of the approved artifact, and is otherwise only allowed to create ArtifactAssessment (Basic or cqf-artifactAssessment extensions in R4) resources in the repository. |
+| [CRMI Approve](OperationDefinition-crmi-approve.html) | The approve operation supports applying an approval to an existing artifact and all its children, regardless of status. The operation sets the `date` and `approvalDate` elements of the approved artifact and all its children, and is otherwise only allowed to create `ArtifactAssessment` (`Basic` with `cqf-artifactAssessment` extensions in R4) resources in the repository. |
 | [CRMI Artifact Diff](OperationDefinition-crmi-artifact-diff.html) | Describes the differences between two knowledge artifacts in FHIR Patch format by recursively resolving dependencies to get a holistic diff. |
-| [CRMI Clone](OperationDefinition-crmi-clone.html) | Creates a clone version of a knowledge artifact, as well as for all resources it is composed of. |
-| [CRMI Draft](OperationDefinition-crmi-draft.html) | Creates a draft version of a knowledge artifact, as well as for all resources it is composed of. |
-| [CRMI Release](OperationDefinition-crmi-release.html) | The release operation performs release processing, including setting the date element of the resource and pinning versions of all direct and transitive references and recording them in the manifest. Child artifacts (i.e. artifacts of which the existing artifact is composed) are also released, recursively. |
-| [CRMI Review](OperationDefinition-crmi-review.html) | The review operation supports applying an review to an existing artifact, regardless of status. The operation sets the date and lastReviewDate elements of the reviewed artifact, and is otherwise only allowed to create ArtifactAssessment (Basic or cqf-artifactAssessment extensions in R4) resources in the repository. |
+| [CRMI Clone](OperationDefinition-crmi-clone.html) | Creates a clone of a knowledge artifact (i.e. an artifact with a new canonical url), and all its children. |
+| [CRMI Draft](OperationDefinition-crmi-draft.html) | Creates a draft version of a knowledge artifact and all its children. |
+| [CRMI Release](OperationDefinition-crmi-release.html) | The release operation performs release processing, including setting the `date` element of the resource and pinning versions of all direct and transitive references and recording them in the manifest. Child artifacts are also released, recursively. |
+| [CRMI Review](OperationDefinition-crmi-review.html) | The review operation supports applying a review to an existing artifact and all its children, regardless of status. The operation sets the `date` and `lastReviewDate` elements of the reviewed artifact and all its children, and is otherwise only allowed to create `ArtifactAssessment` (`Basic` with `cqf-artifactAssessment` extensions in R4) resources in the repository. |
 {: .grid }
 
 ### Operation Pattern Profiles

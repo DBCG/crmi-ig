@@ -227,9 +227,9 @@ Note that when a code system authority has not established a versioning system, 
     2. **SHALL** support the version parameter
     3. **SHOULD** support the offset parameter
     4. **SHOULD** support the count parameter
-    5. **SHOULD** support canonicalVersion parameter (overrides any canonical resource versions specified in the manifest)
-    6. **SHOULD** support checkCanonicalVersion parameter (overrides any canonical resource versions specified in the manifest)
-    7. **SHOULD** support forceCanonicalVersion parameter (overrides any canonical resource versions specified in the manifest)
+    5. **SHOULD** support artifactVersion parameter (overrides any canonical resource versions specified in the manifest)
+    6. **SHOULD** support checkArtifactVersion parameter (overrides any canonical resource versions specified in the manifest)
+    7. **SHOULD** support forceArtifactVersion parameter (overrides any canonical resource versions specified in the manifest)
     8. **SHOULD** support default-system-version parameter (formerly system-version) (overrides code system versions specified in the manifest)
     9. **SHOULD** support check-system-version parameter (overrides code system versions specified in the manifest)
     10. **SHOULD** support force-system-version parameter (overrides code system versions specified in the manifest)

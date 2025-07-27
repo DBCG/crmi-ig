@@ -12,7 +12,7 @@ This page defines three levels of artifact repository capabilities:
 * **Publishable Artifact Repository**: Additional capabilities to support indexing and searching, dependency tracing, and packaging of artifacts
 * **Authoring Artifact Repository**: Additional write capabilities to support content authoring using the repository as a content store
 
-Note that the Publishable and Authoring repositories build on the Shareable repository, so that Shareable describes the minimum basic capabilities of an artifact repository, and the Publishable and Authoring repositories build on that to support additional, more sophisticated use cases.
+Note that the Publishable and Authoring repositories build on the Shareable repository, in that the Shareable repository describes the minimum expectations and capabilities of an artifact repository, and the Publishable and Authoring repositories build on that to support additional, more sophisticated use cases.
 
 In addition, the repository capabilities described here are intended to conform to and facilitate artifact management as described in the [Artifact Lifecycle](artifact-lifecycle.html) topic of this implementation guide. In particular, artifact status is a key element and care must be taken to ensure that artifact status can only transition as specified in the [Artifact Status](artifact-lifecycle.html#artifact-status) topic.
 
@@ -24,20 +24,22 @@ The following conceptual actions support artifact authoring, searching, publicat
 * **Search**: Search for an artifact according to specific criteria
 * **Package**: Package an artifact for a particular environment (regardless of status)
 * **Requirements**: Determine the data requirements and dependencies for a particular artifact (regardless of status)
-* **Submit**: Post a new artifact (regardless of status, used for unreleased content)
-* **Revise**: Update an existing artifact (regardless of status, used for unreleased content)
-* **Withdraw**: Delete an artifact (regardless of status, used for unreleased content)
-* **Review**: Review and provide comments on an existing artifact (regardless of status)
-* **Approve**: Approve and provide comments on an existing artifact (regardless of status)
-* **Publish**: Post a new artifact (regardless of status, used for released content)
-* **Release**: Perform release processing, including pinning versions for all artifacts referenced either directly or transitively by the artifact
-* **Retire**: Post an update that sets status to _retired_ on an existing _active_ artifact
-* **Remove**: Delete an artifact (regardless of status, used for released content)
-* **Draft**: Draft a new version of an existing artifact (regardless of status)
-* **Clone**: Clone a new artifact based on an existing artifact (regardless of status)
+* **Submit**: Post a new artifact and all its children (regardless of status, used for unreleased content)
+* **Revise**: Update an existing artifact and all its children (regardless of status, used for unreleased content)
+* **Withdraw**: Delete an artifact and all its children (regardless of status, used for unreleased content)
+* **Review**: Review and provide comments on an existing artifact and all its children (regardless of status)
+* **Approve**: Approve and provide comments on an existing artifact and all its children (regardless of status)
+* **Publish**: Post a new artifact and all its children (regardless of status, used for released content)
+* **Release**: Perform release processing for an artifact and all its children, including pinning versions for all artifacts referenced either directly or transitively by the artifact
+* **Retire**: Update the status of an existing _active_ artifact and all its children to _retired_
+* **Remove**: Delete an artifact and all its children (regardless of status, used for released content)
+* **Draft**: Draft a new version of an existing artifact and all its children (regardless of status)
+* **Clone**: Clone a new artifact based on an existing artifact and all its children (regardless of status)
 * **Diff**: Compare two knowledge artifacts and optionally expand any ValueSets in the dependency tree
 
 > NOTE: These are conceptual actions that can be performed in a variety of ways. The purpose of the capability statements is to describe how these actions are actually performed in an API, as either a FHIR RESTful _interaction_ (create, read, update, delete), or FHIR _operation_ (e.g. $package).
+
+For operations that update an artifact, clients and servers **SHALL** ensure that child artifacts are updated consistently whenever any parent artifacts are updated, since child artifacts do not have a lifecycle of their own. When an operation impacts multiple artifacts, a transaction **SHOULD** be used to perform the operation, and a transaction-response bundle **SHOULD** be used to communicate the impact of the changes.
 
 ### Shareable Artifact Repository
 
@@ -161,10 +163,11 @@ For each type of knowledge artifact supported by a PublishableArtifactRepository
     5. predecessor: Returning all artifacts that have the given artifact as a predecessor
 5. **SHOULD** support minimum write capability:
     1. Support the _publish_ action by either the `create` or `put` interaction
-        1. The artifact must conform to at least the appropriate shareable and publishable profiles for the artifact
+        1. The artifact **SHALL** conform to at least the appropriate shareable and publishable profiles for the artifact
     2. Support the _retire_ action using an `update` interaction
-        1. The artifact must be in `active` status and update is only allowed to change the status to `retired` and update the `date` (and other metadata appropriate to indicate retired status)
-    3. Support the _remove_ action using a `delete` interaction
+        1. The artifact **SHALL** be in `active` status and the update is only allowed to change the status to `retired` and update the `date` (and other metadata appropriate to indicate retired status)
+    3. Support the _remove_ action using a `delete` interaction, removing an artifact and all its children
+        1. The operation **SHOULD** return a transaction-response bundle that contains the contents of all the deleted resources
 
 ### Authoring Artifact Repository
 
@@ -191,11 +194,12 @@ Repository support for other types of artifacts **SHALL** follow the same patter
 For each type of artifact supported, an AuthoringMeasureRepository:
 
 1. **SHALL** support _submit_ using either the `create` or `update` interaction
-    1. The artifact must conform to at least the appropriate shareable profile
+    1. The artifact **SHALL** conform to at least the appropriate shareable profile
 2. **SHALL** support _revise_ using the `update` interaction
-    2. The artifact must conform to at least the appropriate shareable profile
-3. **SHOULD** support _withdraw_ using the `delete` interaction
-    2. The artifact must be unreleased
+    2. The artifact **SHALL** conform to at least the appropriate shareable profile
+3. **SHOULD** support _withdraw_ using the `delete` interaction, to withdraw an artifact and all its children
+    2. The artifact **SHALL** be unreleased
+    2. The server **SHOULD** responsd with a trasaction-response bundle which contains the contents of all deleted resources
 4. **SHOULD** support _review_ using the [$review](OperationDefinition-crmi-review.html) operation
     1. **SHOULD** support id parameter
     1. **SHOULD** support reviewDate parameter
@@ -203,6 +207,7 @@ For each type of artifact supported, an AuthoringMeasureRepository:
     3. **SHOULD** support artifactAssessmentSummary parameter
     4. **SHOULD** support artifactAssessmentTarget parameter
     5. **SHOULD** support artifactAssessmentAuthor parameter
+    6. **SHOULD** respond with a transaction-response bundle which contains the contents of all updated resources
 5. **SHOULD** support _approve_ using the [$approve](OperationDefinition-crmi-approve.html) operation
     1. **SHOULD** support id parameter
     1. **SHOULD** support approvalDate parameter
@@ -210,9 +215,11 @@ For each type of artifact supported, an AuthoringMeasureRepository:
     3. **SHOULD** support artifactAssessmentSummary parameter
     4. **SHOULD** support artifactAssessmentTarget parameter
     5. **SHOULD** support artifactAssessmentAuthor parameter
+    6. **SHOULD** respond with a trasaction-response bundle which contains the contents of all updated resources
 6. **SHALL** support _draft_ using the [$draft](OperationDefinition-crmi-draft.html) operation
     2. **SHOULD** support id parameter
     4. **SHOULD** support version parameter
+    4. **SHOULD** respond with a transaction-response bundle which contains the contents of all created resources
 6. **SHALL** support _release_ using the [$release](OperationDefinition-crmi-release.html) operation
     1. **SHOULD** support id parameter
     4. **SHOULD** support version parameter
@@ -220,9 +227,11 @@ For each type of artifact supported, an AuthoringMeasureRepository:
     6. **SHOULD** support latestFromTxServer parameter
     7. **SHOULD** support experimentalBehavior parameter
     8. **SHOULD** support releaseLabel parameter
+    9. **SHOULD** respond with a transaction-response bundle which contains the contents of all updated resources
 11. **SHOULD** support _clone_ using the [$clone](OperationDefinition-crmi-clone.html) operation
     2. **SHOULD** support id parameter
     4. **SHOULD** support version parameter
+    5. **SHOULD** respond with a transaction-response bundle which contains the contents of all created resources
 12. **SHOULD** support _diff_ using the [$artifact-diff](OperationDefinition-crmi-artifact-diff.html) operation
     1. **SHALL** support target parameter
     2. **SHALL** support source parameter
@@ -231,7 +240,7 @@ For each type of artifact supported, an AuthoringMeasureRepository:
 
 > The Review and Approve actions are supported via operations, rather than interactions, because they have a specific set of input parameters and are only allowed to make certain updates to the artifacts. Although an `update` interaction could be used in theory, this would place a higher burden on the client to ensure the updated resource was only affecting appropriate elements, something the server must validate anyway.
 
-> The Release action is supported as an operation because it is specifically asking the server to perform a series of processes involving updating statuses, dates, and potentially versions on multiple artifacts, all within the same operation. Multiple `update` interactions could in theory be used to support this, this would place a higher burden on the client to ensure the release processing was followed appropriately for the artifact and all child artifacts, recursively. In addition, all these updates would need to be performed as part of a single transaction, and the server would need to validate the transaction updates anyway.
+> The Release action is supported as an operation because it is specifically asking the server to perform a series of processes involving dates, and potentially versions on multiple artifacts, all within the same operation. Multiple `update` interactions could in theory be used to support this, but this would place a higher burden on the client to ensure the release processing was followed appropriately for the artifact and all child artifacts, recursively. In addition, all these updates would need to be performed as part of a single transaction, and the server would need to validate the transaction updates anyway.
 
 > The Draft action is supported as an operation because it involves not only creating a new version of an artifact, but any child artifacts, recursively. This could be done in theory by the client reading all relevant artifacts and creating new resources, but an operation simplifies implementation for the client.
 
