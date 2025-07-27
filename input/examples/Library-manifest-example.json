@@ -100,6 +100,26 @@
         "display": "SNOMED-CT US Edition, 2019-09-01"
       },
       {
+        "type": "depends-on",
+        "resource": "http://hl7.org/fhir/uv/crmi/ValueSet/publishable-example",
+        "_resource": {
+          "extension": [{
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-resourceType",
+            "valueCode": "ValueSet"
+          }, {
+            "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-sourceReference",
+            "extension": [{
+              "url": "artifact",
+              "valueCanonical": "http://hl7.org/fhir/uv/crmi/StructureDefinition/publishable-example"
+            }, {
+              "url": "path",
+              "valueString": "differential.element.where(id='Observation.value[x]').binding.valueSet"
+            }]
+          }]
+        },
+        "display": "Danger Signs Grouper ValueSet"
+      },
+      {
         "extension": [{
           "url": "http://hl7.org/fhir/StructureDefinition/artifact-isOwned",
           "valueBoolean": true

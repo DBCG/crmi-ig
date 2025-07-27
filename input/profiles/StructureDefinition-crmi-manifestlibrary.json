@@ -426,6 +426,23 @@
         ]
       },
       {
+        "id": "Library.relatedArtifact:dependency.resource.extension:referenceSource",
+        "path": "Library.relatedArtifact.resource.extension",
+        "sliceName": "referenceSource",
+        "short": "Originated in",
+        "definition": "Allows for the source of the dependency to be recorded. This extension may appear on the dependency any number of times, once for each unique originating source for the given dependency.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-referenceSource"
+            ]
+          }
+        ]
+      },
+      {
         "id": "Library.content",
         "path": "Library.content",
         "min": 0,
