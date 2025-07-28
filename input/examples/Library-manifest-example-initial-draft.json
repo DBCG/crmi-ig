@@ -9,11 +9,11 @@
       "id" : "exp-params",
       "parameter" : [{
         "name" : "system-version",
-        "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20230901"
+        "valueCanonical" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20230901"
       },
       {
         "name" : "system-version",
-        "valueUri" : "http://loinc.org|2.74"
+        "valueCanonical" : "http://loinc.org|2.74"
       },
       {
         "name" : "activeOnly",

@@ -6,12 +6,12 @@
   <title value="CRMI Shareable Artifact Repository"/>
   <status value="active"/>
   <experimental value="false"/>
-  <publisher value="HL7, Inc"/>
+  <publisher value="HL7 International / Clinical Decision Support"/>
   <contact>
     <name value="FHIR Project"/>
     <telecom>
       <system value="url"/>
-      <value value="http://hl7.org/fhir"/>
+      <value value="http://www.hl7.org/Special/committees/dss"/>
     </telecom>
   </contact>
   <description value="Capability statement for a repository service supporting minimum required capabilities to share FHIR-based artifact specifications. See the Publishable and Authoring Artifact Repository capability statements for more comprehensive support for publishing and authoring workflows."/>

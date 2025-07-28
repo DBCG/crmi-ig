@@ -14,17 +14,6 @@
   "status" : "draft",
   "kind" : "operation",
   "date" : "2019-11-01T09:29:23+11:00",
-  "publisher" : "HL7 (FHIR Project)",
-  "contact" : [{
-    "telecom" : [{
-      "system" : "url",
-      "value" : "http://hl7.org/fhir"
-    },
-    {
-      "system" : "email",
-      "value" : "fhir@lists.hl7.org"
-    }]
-  }],
   "description" : "This operation definition is a copy of the CRMI ValueSet/$expand OperationDefinition that declares conformance to the CRMI Canonical Version Bindable and CRMI Pageable operation profiles",
   "code" : "expand",
   "base": "http://hl7.org/fhir/OperationDefinition/ValueSet-expand",

@@ -10,6 +10,6 @@ Description: "Represents the definition of medication knowledge, suitable for us
     * extension contains ArtifactUriReference named nonCanonicalReference 0..1 MS
 * associatedMedication
   * extension contains ArtifactUriReference named nonCanonicalReference 0..1 MS
-* ingredient
-  * itemReference
+* ingredient MS
+  * itemReference MS
     * extension contains ArtifactUriReference named nonCanonicalReference 0..1 MS

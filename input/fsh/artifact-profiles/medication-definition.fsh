@@ -10,6 +10,6 @@ Description: "Represents the definition of a medication, suitable for use in var
 * ingredient MS
 * ingredient
   * item[x] MS
-  * itemReference 
+  * itemReference MS
     * extension contains ArtifactUriReference named nonCanonicalReference 0..1 MS
 * batch 0..0

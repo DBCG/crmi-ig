@@ -104,10 +104,6 @@
           "definition" : "http://hl7.org/fhir/SearchParameter/Library-url",
           "type" : "uri"
         }]
-      }],
-      "operation" : [{
-        "name" : "evaluate",
-        "definition" : "http://hl7.org/fhir/OperationDefinition/Library-evaluate"
       }]
     }]
   }

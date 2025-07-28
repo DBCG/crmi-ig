@@ -158,11 +158,11 @@ Note that when a code system authority has not established a versioning system, 
     7. **SHALL** support the systemVersion parameter
     8. **SHALL** support the coding parameter
     9. **SHALL** support the codeableConcept parameter
-    10. **SHALL** support the default-valueset-version parameter (defined in [CRMIValueSetValidateCode](OperationDefinition-crmi-valueset-validatecode.html))
-    11. **SHALL** support the check-valueset-version parameter (defined in [CRMIValueSetValidateCode](OperationDefinition-crmi-valueset-validatecode.html))
-    12. **SHALL** support the force-valueset-version parameter (defined in [CRMIValueSetValidateCode](OperationDefinition-crmi-valueset-validatecode.html))
-    13. **SHOULD** support the manifest parameter (defined in [CRMIValueSetValidateCode](OperationDefinition-crmi-valueset-validatecode.html))
-    14. **SHOULD** support the manifestParameters parameter (defined in [CRMIValueSetValidateCode](OperationDefinition-crmi-valueset-validatecode.html))
+    10. **SHALL** support the default-valueset-version parameter (defined in [CRMIValueSetValidateCode](OperationDefinition-crmi-valueset-validate-code.html))
+    11. **SHALL** support the check-valueset-version parameter (defined in [CRMIValueSetValidateCode](OperationDefinition-crmi-valueset-validate-code.html))
+    12. **SHALL** support the force-valueset-version parameter (defined in [CRMIValueSetValidateCode](OperationDefinition-crmi-valueset-validate-code.html))
+    13. **SHOULD** support the manifest parameter (defined in [CRMIValueSetValidateCode](OperationDefinition-crmi-valueset-validate-code.html))
+    14. **SHOULD** support the manifestParameters parameter (defined in [CRMIValueSetValidateCode](OperationDefinition-crmi-valueset-validate-code.html))
 
 11. Support [ValueSet/$expand](http://hl7.org/fhir/R4/valueset-operation-expand.html)
     1. **SHALL** support the url parameter

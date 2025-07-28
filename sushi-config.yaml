@@ -20,7 +20,7 @@ description: >-
 status: active
 license: CC0-1.0
 date: 2024-05-08
-version: 2.0.0-cibuild
+version: 2.0.0-ballot1
 
 # Although fhirVersions is 0..* in the ImplementationGuide resource
 # it can be a single item OR and array here (but so far SUSHI only
@@ -34,7 +34,7 @@ fhirVersion: 4.0.1
 # will recognize them as well. In either case, they'll be copied
 # to the IG JSON using the formal names.
 copyrightYear: 2022+
-releaseLabel: cibuild
+releaseLabel: STU 2 - Ballot 1
 
 # The publisher can be a single item or a list, each with a name and
 # optional url and/or email. The first publisher's name will be used
@@ -46,6 +46,10 @@ publisher:
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
     valueCode: cds
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+    valueCode: trial-use
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
+    valueInteger: 4
 
 # Those who need more control or want to add additional details to the contact values can use
 # contact directly and follow the format outlined in the ImplementationGuide resource and
@@ -68,7 +72,9 @@ jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
 #  hl7.fhir.uv.extensions.r4: 1.0.0
 
 dependencies:
-  hl7.terminology.r4: 6.4.0
+  hl7.terminology.r4: 
+    uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
+    version: 6.5.0
   hl7.fhir.uv.extensions.r4: 
     id: ext
     version: 5.2.0
@@ -76,19 +82,22 @@ dependencies:
 parameters:
   excludettl: true
   path-history: http://hl7.org/fhir/uv/crmi/history.html
-  path-expansion-params: '../../input/_resources/exp-params.json'  # for using International ed of SNOMED
+  path-expansion-params: '../../input/resources/Parameters-manifest.json'  # for using International ed of SNOMED
+  pin-canonicals: 'pin-all'
+  pin-manifest: 'manifest'
   special-url:
     - http://terminology.hl7.org/ValueSet/artifact-resource-types
   auto-oid-root: 2.16.840.1.113883.4.642.40.38
-  apply:
-    - version
-    - date
-    - status
-    - publisher
-    - contact
-    - copyright
-    - experimental
-    - jurisdiction
+  apply-version: false
+  default-version: true
+  apply-publisher: false
+  default-publisher: true
+  apply-contact: false
+  default-contact: true
+  apply-copyright: false
+  default-copyright: true
+  apply-jurisdiction: false
+  default-jurisdiction: true
 
 pages:
   index.md:
@@ -185,6 +194,16 @@ resources:
   Parameters/crmi-evaluationresult-example:
     name: Example Evaluation Result Parameters
     description: Example Parameters resource demonstrating the use of data-absent-reason extension to indicate a null evaluation result.
+  Parameters/endpoints:
+    name: Example Endpoint Configuration Parameters
+    description: Example Parameters resource demonstrating a possible endpoint configuration for accessing content in tx.fhir.org and the Value Set Authority Center.
+  Parameters/manifestparameters-example:
+    name: Example Manifest Parameters
+    description: Example Parameters resource demonstrating an input manifest parameters used to support predictable expansion throughout a measure development cycle.
+  Parameters/manifest:
+    name: Input Expansion Parameters
+    description: The input expansion parameters resource for this implementation guide, specifying SNOMED Edition and version.
+    exampleBoolean: false
   Group/testcase-example:
     name: Example TestCase Group
     description: Example Group illustrating use of the cqf-testArtifact extension to build a set of test data for an artifact.

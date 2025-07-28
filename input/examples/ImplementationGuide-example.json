@@ -11,7 +11,7 @@
         "parameter": [
           {
             "name" : "system-version",
-            "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20190901"
+            "valueCanonical" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20190901"
           }
         ]
       }
@@ -21,6 +21,15 @@
       "valueReference": {
         "reference": "#exp-params"
       }
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+      "valueCode": "informative"
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "cds"
+    }, {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+      "valueInteger": 4
     }],
     "url" : "http://hl7.org/fhir/uv/crmi/ImplementationGuide/example",
     "version" : "0.1.0",
@@ -54,7 +63,7 @@
       }],
       "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
       "packageId" : "hl7.terminology.r4",
-      "version" : "5.5.0"
+      "version" : "6.5.0"
     },
     {
       "id" : "hl7ext",
@@ -64,13 +73,7 @@
       }],
       "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
       "packageId" : "hl7.fhir.uv.extensions.r4",
-      "version" : "5.1.0"
-    },
-    {
-      "id" : "cqf",
-      "uri" : "http://fhir.org/guides/cqf/common/ImplementationGuide/fhir.cqf.common",
-      "packageId" : "fhir.cqf.common",
-      "version" : "4.0.1"
+      "version" : "5.2.0"
     }],
     "definition" : {
       "extension" : [{
@@ -201,7 +204,7 @@
         },
         {
           "url" : "value",
-          "valueString" : "http://fhir.org/guides/who/smart-anc-mini/history.html"
+          "valueString" : "http://example.org/guides/who/smart-anc-mini/history.html"
         }],
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
       },
@@ -491,7 +494,7 @@
         },
         {
           "url" : "value",
-          "valueString" : "http://fhir.org/guides/who/smart-anc-mini/history.html"
+          "valueString" : "http://example.org/guides/who/smart-anc-mini/history.html"
         }],
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
       },

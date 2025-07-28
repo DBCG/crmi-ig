@@ -31,7 +31,7 @@
         "text": "Quick check"
       }
     } ],
-    "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT01" ],
+    "library": [ "http://example.org/guides/who/anc-cds/Library/ANCDT01" ],
     "action": [ {
       "title": "ANC.DT.01 Danger signs",
       "trigger": [ {

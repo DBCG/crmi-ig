@@ -19,7 +19,6 @@
   "parameter" : [{
     "name" : "url",
     "use" : "in",
-    "scope" : ["type"],
     "min" : 0,
     "max" : "1",
     "documentation" : "Value set Canonical URL. The server must know the value set (e.g. it is defined explicitly in the server's value sets, or it is defined implicitly by some code system known to the server",
@@ -36,7 +35,6 @@
   {
     "name" : "valueSet",
     "use" : "in",
-    "scope" : ["type"],
     "min" : 0,
     "max" : "1",
     "documentation" : "The value set is provided directly as part of the request. Servers may choose not to accept value sets in this fashion. This parameter is used when the client wants the server to expand a value set that is not stored on the server",
@@ -45,7 +43,6 @@
   {
     "name" : "valueSetVersion",
     "use" : "in",
-    "scope" : ["type"],
     "min" : 0,
     "max" : "1",
     "documentation" : "The identifier that is used to identify a specific version of the value set to be used when validating the code. This is an arbitrary value managed by the value set author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available.",
@@ -184,7 +181,7 @@
     "use" : "in",
     "min" : 0,
     "max" : "1",
-    "documentation" : "Specifies a manifest library that provides expansion rules for the operation. The library has an extension expansionParameters that references a contained Parameters resource that contains additional $expand parameters. See the [CRMI specification description of manifests]https://build.fhir.org/ig/HL7/crmi-ig/StructureDefinition-crmi-manifestlibrary.html) and [CRMI expansion rules](https://build.fhir.org/ig/HL7/crmi-ig/artifact-terminology-service.html#expansion-rules) for a complete description of how manifest values are used to provide defaults for expansion parameters. Parameters specified directly in a $validate-code operation override behaviors specified by the manifest parameter. It is an error to supply both a manifest and a manifestParameters.",
+    "documentation" : "Specifies a manifest library that provides expansion rules for the operation. The library has an extension expansionParameters that references a contained Parameters resource that contains additional $expand parameters. See the [CRMI specification description of manifests](StructureDefinition-crmi-manifestlibrary.html) and [CRMI expansion rules](artifact-terminology-service.html#expansion-rules) for a complete description of how manifest values are used to provide defaults for expansion parameters. Parameters specified directly in a $validate-code operation override behaviors specified by the manifest parameter. It is an error to supply both a manifest and a manifestParameters.",
     "type" : "canonical",
     "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Library"]
   },

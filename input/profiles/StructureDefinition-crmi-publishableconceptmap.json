@@ -18,7 +18,17 @@
   "title" : "CRMI Publishable ConceptMap",
   "status" : "active",
   "experimental" : false,
-  "publisher" : "HL7",
+  "publisher": "HL7 International / Clinical Decision Support",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/dss"
+        }
+      ]
+    }
+  ],
   "description" : "Defines and enforces the minimum expectations for publication and distribution of a concept map, typically as part of an artifact repository or implementation guide publication",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
@@ -174,8 +184,8 @@
       "mustSupport" : true
     },
     {
-      "id" : "CodeSystem.extension:relatedArtifact.extension:publicationDate",
-      "path" : "CodeSystem.extension.extension",
+      "id" : "ConceptMap.extension:relatedArtifact.extension:publicationDate",
+      "path" : "ConceptMap.extension.extension",
       "sliceName" : "publicationDate",
       "min" : 0,
       "max" : "1",
@@ -185,8 +195,8 @@
       }]
     },
     {
-      "id" : "CodeSystem.extension:relatedArtifact.extension:publicationStatus",
-      "path" : "CodeSystem.extension.extension",
+      "id" : "ConceptMap.extension:relatedArtifact.extension:publicationStatus",
+      "path" : "ConceptMap.extension.extension",
       "sliceName" : "publicationStatus",
       "min" : 0,
       "max" : "1",

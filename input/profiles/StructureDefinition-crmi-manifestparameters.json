@@ -18,13 +18,13 @@
   "title": "CRMI Manifest Parameters",
   "status": "active",
   "experimental": false,
-  "publisher": "Clinical Decision Support WG",
+  "publisher": "HL7 International / Clinical Decision Support",
   "contact": [
     {
       "telecom": [
         {
           "system": "url",
-          "value": "http://www.hl7.org/Special/committees/dss/index.cfm"
+          "value": "http://www.hl7.org/Special/committees/dss"
         }
       ]
     }
@@ -34,8 +34,9 @@
     {
       "coding": [
         {
-          "system": "urn:iso:std:iso:3166",
-          "code": "001"
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code": "001",
+          "display": "World"
         }
       ]
     }
@@ -215,7 +216,7 @@
         "path": "Parameters.parameter.value[x].extension",
         "sliceName": "display",
         "min": 0,
-        "max": 1,
+        "max": "1",
         "type": [
           {
             "code": "Extension",
@@ -254,7 +255,7 @@
         "path": "Parameters.parameter.value[x].extension",
         "sliceName": "display",
         "min": 0,
-        "max": 1,
+        "max": "1",
         "type": [
           {
             "code": "Extension",
@@ -293,7 +294,7 @@
         "path": "Parameters.parameter.value[x].extension",
         "sliceName": "display",
         "min": 0,
-        "max": 1,
+        "max": "1",
         "type": [
           {
             "code": "Extension",
@@ -333,7 +334,7 @@
         "path": "Parameters.parameter.value[x].extension",
         "sliceName": "display",
         "min": 0,
-        "max": 1,
+        "max": "1",
         "type": [
           {
             "code": "Extension",
@@ -348,7 +349,7 @@
         "path": "Parameters.parameter.value[x].extension",
         "sliceName": "resourceType",
         "min": 0,
-        "max": 1,
+        "max": "1",
         "type": [
           {
             "code": "Extension",
@@ -388,7 +389,7 @@
         "path": "Parameters.parameter.value[x].extension",
         "sliceName": "display",
         "min": 0,
-        "max": 1,
+        "max": "1",
         "type": [
           {
             "code": "Extension",
@@ -405,7 +406,7 @@
         "short": "Uri for non-canonical artifact",
         "definition": "If the reference is to a [non-canonical-artifact](artifact-lifecycle.html#non-canonical-artifacts), this extension is used to provide a canonical-like reference as a uri (e.g. http://example.org/fhir/Group/example|1.0.0).",
         "min": 0,
-        "max": 1,
+        "max": "1",
         "type": [
           {
             "code": "Extension",
@@ -420,7 +421,7 @@
         "path": "Parameters.parameter.value[x].extension",
         "sliceName": "resourceType",
         "min": 0,
-        "max": 1,
+        "max": "1",
         "type": [
           {
             "code": "Extension",

@@ -13,7 +13,7 @@
         "parameter": [
           {
             "name" : "system-version",
-            "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20190901"
+            "valueCanonical" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20190901"
           }
         ]
       }
@@ -27,7 +27,7 @@
       },
       {
         "url": "http://hl7.org/fhir/StructureDefinition/cqf-scope",
-        "valueString": "who.fhir.ancm.anc-dt-01@http://fhir.org/guides/who/ancm#1.0.0"
+        "valueString": "who.fhir.ancm.anc-dt-01@http://example.org/guides/who/ancm#1.0.0"
       },
       {
         "url": "http://hl7.org/fhir/StructureDefinition/cqf-artifactComment",
@@ -107,7 +107,7 @@
             "url": "http://hl7.org/fhir/StructureDefinition/cqf-resourceType",
             "valueCode": "ValueSet"
           }, {
-            "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-sourceReference",
+            "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-referenceSource",
             "extension": [{
               "url": "artifact",
               "valueCanonical": "http://hl7.org/fhir/uv/crmi/StructureDefinition/publishable-example"

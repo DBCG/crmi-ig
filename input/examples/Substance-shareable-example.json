@@ -6,21 +6,17 @@
     },
     "extension": [{
         "url": "http://hl7.org/fhir/StructureDefinition/artifact-url",
-        "valueUri": "http://hl7.org/fhir/uv/crmi/Substance/shareable-example"
+        "valueUri": "http://example.org/Substance/shareable-example"
     }, {
         "url": "http://hl7.org/fhir/StructureDefinition/artifact-version",
         "valueString": "0.1.0"
     }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm",
-        "valueCoding": {
-            "system": "http://hl7.org/fhir/version-algorithm",
-            "code": "semver"
-        }
-    }, {
         "url": "http://hl7.org/fhir/StructureDefinition/artifact-versionPolicy",
-        "valueCoding": {
-            "system": "http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes",
-            "code": "strict"
+        "valueCodeableConcept": {
+            "coding": [{
+              "system": "http://terminology.hl7.org/CodeSystem/artifact-version-policy-codes",
+              "code": "strict"
+            }]
         }
     }, {
         "url": "http://hl7.org/fhir/StructureDefinition/artifact-title",

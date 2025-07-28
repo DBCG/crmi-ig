@@ -143,7 +143,7 @@
           "valueString": "By Education Level"
         }, {
           "url": "statement",
-          "valueString": "/*\nBy Patient Education Level (none, don't know, primary, secondary, higher)\n*/\ndefine \"By Education Level\":\n  Patient.extension E\n    where E.url = 'http://fhir.org/guides/who/anc-cds/StructureDefinition/educationlevel'\n    return E.value as CodeableConcept"
+          "valueString": "/*\nBy Patient Education Level (none, don't know, primary, secondary, higher)\n*/\ndefine \"By Education Level\":\n  Patient.extension E\n    where E.url = 'http://example.org/guides/who/anc-cds/StructureDefinition/educationlevel'\n    return E.value as CodeableConcept"
         }, {
           "url": "displaySequence",
           "valueInteger": 7
@@ -208,7 +208,7 @@
       }, {
         "type": "depends-on",
         "display": "Library FHIRHelpers",
-        "resource": "http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"
+        "resource": "http://example.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"
       }, {
         "type": "depends-on",
         "display": "Example Code system ISO-8601-Derived Periods",
@@ -216,19 +216,19 @@
       }, {
         "type": "depends-on",
         "display": "Value set Antenatal care contact",
-        "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-contact"
+        "resource": "http://example.org/guides/who/anc-cds/ValueSet/antenatal-care-contact"
       }, {
         "type": "depends-on",
         "display": "Value set First Antenatal Care Contact Choices",
-        "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b5-de2"
+        "resource": "http://example.org/guides/who/anc-cds/ValueSet/anc-b5-de2"
       }, {
         "type": "depends-on",
         "display": "Value set Gestational age",
-        "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b6-de17"
+        "resource": "http://example.org/guides/who/anc-cds/ValueSet/anc-b6-de17"
       }, {
         "type": "depends-on",
         "display": "Value set Antenatal care case",
-        "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-case"
+        "resource": "http://example.org/guides/who/anc-cds/ValueSet/antenatal-care-case"
       } ],
       "parameter": [ {
         "name": "Measurement Period",
@@ -283,7 +283,7 @@
         "mustSupport": [ "type", "reasonCode", "period" ],
         "codeFilter": [ {
           "path": "type",
-          "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-contact"
+          "valueSet": "http://example.org/guides/who/anc-cds/ValueSet/antenatal-care-contact"
         } ]
       }, {
         "extension": [{
@@ -295,7 +295,7 @@
         "mustSupport": [ "code", "status", "encounter", "encounter.reference" ],
         "codeFilter": [ {
           "path": "code",
-          "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b6-de17"
+          "valueSet": "http://example.org/guides/who/anc-cds/ValueSet/anc-b6-de17"
         } ]
       }, {
         "type": "Patient",
@@ -307,7 +307,7 @@
         "mustSupport": [ "type" ],
         "codeFilter": [ {
           "path": "type",
-          "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-case"
+          "valueSet": "http://example.org/guides/who/anc-cds/ValueSet/antenatal-care-case"
         } ]
       } ]
     } ],

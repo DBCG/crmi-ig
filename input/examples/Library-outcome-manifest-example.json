@@ -17,7 +17,7 @@
             "details": {
               "text": "Could not expand the value set Danger signs Codes Grouper, but the definition of the value set is still included in the resulting package."
             },
-            "expression": "Library.relatedArtifact.where(type='composed-of' and url='http://hl7.org/fhir/uv/crmi/ValueSet/publishable-example').resolve()"
+            "expression": ["Library.relatedArtifact.where(type='composed-of' and url='http://hl7.org/fhir/uv/crmi/ValueSet/publishable-example').resolve()"]
           }
         ]
       }, 
@@ -27,7 +27,7 @@
         "parameter": [
           {
             "name" : "system-version",
-            "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20190901"
+            "valueCanonical" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20190901"
           }
         ]
       }
@@ -47,7 +47,7 @@
       },
       {
         "url": "http://hl7.org/fhir/StructureDefinition/cqf-scope",
-        "valueString": "who.fhir.ancm.anc-dt-01@http://fhir.org/guides/who/ancm#1.0.0"
+        "valueString": "who.fhir.ancm.anc-dt-01@http://example.org/guides/who/ancm#1.0.0"
       },
       {
         "url": "http://hl7.org/fhir/StructureDefinition/cqf-artifactComment",
@@ -61,7 +61,7 @@
       }
     ],
     "url": "http://hl7.org/fhir/uv/crmi/Library/outcome-manifest-example",
-    "name": "OutcomeManifest for ANCMDangerSignsPackage",
+    "name": "OutcomeManifestForANCMDangerSignsPackage",
     "title": "Outcome Manifest for ANCM Danger Signs Package",
     "status": "active",
     "experimental": true,

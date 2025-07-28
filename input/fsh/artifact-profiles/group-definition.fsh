@@ -31,13 +31,13 @@ Description: "Represents the definition of a group of subjects, suitable for use
 * code MS
 * name 1..1 MS
 * characteristic MS
-* member
-  * entity
+* member MS
+  * entity MS
     * extension contains 
       ArtifactReference named profile 0..1 MS and
       ArtifactUriReference named nonCanonicalReference 0..1 MS
     * extension[ArtifactReference].value[x] only canonical
     * extension[profile].valueCanonical obeys gdf-2
-* managingEntity
+* managingEntity MS
   * extension contains ArtifactReference named profile 0..1 MS
   * extension[ArtifactReference].value[x] only canonical

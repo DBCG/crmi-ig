@@ -12,9 +12,9 @@
     "valueBoolean": true
   }, {
     "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-configurationFor",
-    "valueCanonical": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-10-order-sign"
+    "valueCanonical": "http://example.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-10-order-sign"
   } ],
-  "url": "http://fhir.org/guides/cdc/opioid-cds/Library/OpioidCDSREC10ModuleConfiguration",
+  "url": "http://example.org/guides/cdc/opioid-cds/Library/OpioidCDSREC10ModuleConfiguration",
   "version": "2022.1.0",
   "name": "OpioidCDSREC10ModuleConfiguration",
   "title": "Module Configuration Example Library for Recommendation 10 (Endpoint-specific prefetch configuration)",
@@ -103,7 +103,7 @@
       } ]
     }, {
       "path": "code",
-      "valueSet": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/all-urine-drug-screening-tests"
+      "valueSet": "http://example.org/guides/cdc/opioid-cds/ValueSet/all-urine-drug-screening-tests"
     } ],
     "dateFilter": [ {
       "path": "effective",

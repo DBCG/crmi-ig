@@ -83,14 +83,6 @@
     "description": "This library defines terminologies and functions commonly used in FHIR-based CQL artifacts.\n",
     "relatedArtifact": [ {
       "type": "depends-on",
-      "display": "FHIR model information",
-      "resource": "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"
-    }, {
-      "type": "depends-on",
-      "display": "Library FHIRHelpers",
-      "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.1.000"
-    }, {
-      "type": "depends-on",
       "display": "Code system LOINC",
       "resource": "http://loinc.org"
     }, {
@@ -108,7 +100,7 @@
     }, {
       "type": "depends-on",
       "display": "Code system RequestIntent",
-      "resource": "http://terminology.hl7.org/CodeSystem/request-intent"
+      "resource": "http://hl7.org/fhir/request-intent"
     }, {
       "type": "depends-on",
       "display": "Code system MedicationRequestCategory",

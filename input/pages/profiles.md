@@ -34,7 +34,7 @@ For knowledge artifacts, a _shareable_ artifact defines the minimum expectations
 |----|----|
 | url | **SHALL** be provided because it provides the globally unique identity for the artifact |
 | version | **SHALL** be provided because it ensures version tracking is possible for the artifact |
-| versionAlgorithm | **SHOULD** be provided to ensure systems understand how to interpret the version element of the artifact |
+| versionAlgorithm | **SHOULD** be provided if a version algorithm other than semver or date-based is used to ensure systems understand how to interpret the version element of the artifact |
 | name | **SHOULD** be provided to ensure systems can reliably make use of code-generation and other system-level processing for the artifact |
 | title | **SHALL** be provided to ensure systems can provide a user-friendly identifier for the artifact |
 | status | **SHALL** be provided to ensure systems can track the life-cycle of the artifact |
@@ -105,7 +105,7 @@ The following table lists the capability profiles defined for each type of knowl
   <tr><td>Library</td><td><a href="StructureDefinition-crmi-shareablelibrary.html">CRMIShareableLibrary</a></td><td><a href="StructureDefinition-crmi-computablelibrary.html">CRMIComputableLibrary</a></td><td><a href="StructureDefinition-crmi-publishablelibrary.html">CRMIPublishableLibrary</a></td><td><a href="StructureDefinition-crmi-executablelibrary.html">CRMIExecutableLibrary</a></td></tr>
   <tr><td>Measure</td><td><a href="StructureDefinition-crmi-shareablemeasure.html">CRMIShareableMeasure</a></td><td>N/A (no requirements)</td><td><a href="StructureDefinition-crmi-publishablemeasure.html">CRMIPublishableMeasure</a></td><td>N/A (no requirements)</td></tr>
   <tr><td>Medication</td><td><a href="StructureDefinition-crmi-shareablemedication.html">CRMIShareableMedication</a></td><td>N/A (no requirements)</td><td><a href="StructureDefinition-crmi-publishablemedication.html">CRMIPublishableMedication</a></td><td>N/A (no requirements)</td></tr>
-  <tr><td>MedicationKnowledge</td><td><a href="StructureDefinition-crmi-shareablemedicationknowledge.html">CRMIShareableMedicationKnowledge</a></td><td>N/A (no requirements)</td><td><a href="StructureDefinition/crmi-publishablemedicationknowledge">CRMIPublishableMedicationKnowledge</a></td><td>N/A (no requirements)</td></tr>
+  <tr><td>MedicationKnowledge</td><td><a href="StructureDefinition-crmi-shareablemedicationknowledge.html">CRMIShareableMedicationKnowledge</a></td><td>N/A (no requirements)</td><td><a href="StructureDefinition-crmi-publishablemedicationknowledge.html">CRMIPublishableMedicationKnowledge</a></td><td>N/A (no requirements)</td></tr>
   <tr><td>MessageDefinition</td><td>CRMIShareableMessageDefinition (Roadmap Item)</td><td>N/A (no requirements)</td><td>CRMIPublishableMessageDefinition (Roadmap Item)</td><td>N/A (no requirements)</td></tr>
   <tr><td>NamingSystem</td><td><a href="StructureDefinition-crmi-shareablenamingsystem.html">CRMIShareableNamingSystem</a></td><td>N/A (no requirements)</td><td><a href="StructureDefinition-crmi-publishablenamingsystem.html">CRMIPublishableNamingSystem</a></td><td>N/A (no requirements)</td></tr>
   <tr><td>ObservationDefinition</td><td>CRMIShareableObservationDefinition (Roadmap Item)</td><td>N/A (no requirements)</td><td>CRMIPublishableObservationDefinition (Roadmap Item)</td><td>N/A (no requirements)</td></tr>
@@ -117,7 +117,7 @@ The following table lists the capability profiles defined for each type of knowl
   <tr><td>Substance</td><td><a href="StructureDefinition-crmi-shareablesubstance.html">CRMIShareableSubstance</a></td><td>N/A (no requirements)</td><td><a href="StructureDefinition-crmi-publishablesubstance.html">CRMIPublishableSubstance</a></td><td>N/A (no requirements)</td></tr>
   <tr><td>SubscriptionTopic</td><td>CRMIShareableSubscriptionTopic (Roadmap Item)</td><td>N/A (no requirements)</td><td>CRMIPublishableSubscriptionTopic (Roadmap Item)</td><td>N/A (no requirements)</td></tr>
   <tr><td>StructureDefinition</td><td><a href="StructureDefinition-crmi-shareablestructuredefinition.html">CRMIShareableStructureDefinition</a></td><td>N/A (no requirements)</td><td><a href="StructureDefinition-crmi-publishablestructuredefinition.html">CRMIPublishableStructureDefinition</a></td><td>N/A (no requirements)</td></tr>
-  <tr><td>StructureMap</td><td><a href="StructureDefinition-crmi-shareablestructuremap">CRMIShareableStructureMap</a></td><td>N/A (no requirements)</td><td><a href="StructureDefinition-crmi-publishablestructuremap.html">CRMIPublishableStructureMap</a></td><td>N/A (no requirements)</td></tr>
+  <tr><td>StructureMap</td><td><a href="StructureDefinition-crmi-shareablestructuremap.html">CRMIShareableStructureMap</a></td><td>N/A (no requirements)</td><td><a href="StructureDefinition-crmi-publishablestructuremap.html">CRMIPublishableStructureMap</a></td><td>N/A (no requirements)</td></tr>
   <tr><td>TerminologyCapabilities</td><td><a href="StructureDefinition-crmi-shareableterminologycapabilities.html">CRMIShareableTerminologyCapabilities</a></td><td>N/A (no requirements)</td><td><a href="StructureDefinition-crmi-publishableterminologycapabilities.html">CRMIPublishableTerminologyCapabilities</a></td><td>N/A (no requirements)</td></tr>
   <tr><td>ValueSet</td><td><a href="StructureDefinition-crmi-shareablevalueset.html">CRMIShareableValueSet</a></td><td><a href="StructureDefinition-crmi-computablevalueset.html">CRMIComputableValueSet</a></td><td><a href="StructureDefinition-crmi-publishablevalueset.html">CRMIPublishableValueSet</a></td><td><a href="StructureDefinition-crmi-expandedvalueset.html">CRMIExpandedValueSet</a></td></tr>
 </table>
@@ -172,7 +172,7 @@ To establish consistency across knowledge operations, the following list of prof
     <td>Operation where default manifest to resolve canonicals can be specified.</td>
   </tr>
   <tr>
-    <td><a href="StructureDefinition-crmi-pagable-operation.html">PageableOperation</a></td>
+    <td><a href="StructureDefinition-crmi-pageable-operation.html">PageableOperation</a></td>
     <td>Operation where output may be pageable.</td>
   </tr>
 </table>

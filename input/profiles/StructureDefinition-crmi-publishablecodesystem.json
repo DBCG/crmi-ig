@@ -18,7 +18,17 @@
   "title" : "CRMI Publishable CodeSystem",
   "status" : "active",
   "experimental" : false,
-  "publisher" : "HL7",
+  "publisher": "HL7 International / Clinical Decision Support",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/dss"
+        }
+      ]
+    }
+  ],
   "description" : "Defines and enforces the minimum expectations for publication and distribution of a code system, typically as part of an artifact repository or implementation guide publication",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
@@ -193,28 +203,6 @@
       "type" : [{
         "code" : "Extension",
         "profile" : ["http://hl7.org/fhir/StructureDefinition/cqf-publicationStatus"]
-      }]
-    },
-    {
-      "id" : "CodeSystem.extension:sourceReference",
-      "path" : "CodeSystem.extension",
-      "sliceName" : "sourceReference",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/codesystem-sourceReference"]
-      }]
-    },
-    {
-      "id" : "CodeSystem.extension:otherName",
-      "path" : "CodeSystem.extension",
-      "sliceName" : "otherName",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/codesystem-otherName"]
       }]
     },
     {

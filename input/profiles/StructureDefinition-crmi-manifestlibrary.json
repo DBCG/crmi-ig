@@ -18,13 +18,13 @@
   "title": "CRMI Manifest Library",
   "status": "active",
   "experimental": false,
-  "publisher": "Clinical Decision Support WG",
+  "publisher": "HL7 International / Clinical Decision Support",
   "contact": [
     {
       "telecom": [
         {
           "system": "url",
-          "value": "http://www.hl7.org/Special/committees/dss/index.cfm"
+          "value": "http://www.hl7.org/Special/committees/dss"
         }
       ]
     }
@@ -324,7 +324,7 @@
         "short": "Uri for non-canonical artifact",
         "definition": "If the reference is to a [non-canonical-artifact](artifact-lifecycle.html#non-canonical-artifacts), this extension is used to provide a canonical-like reference as a uri (e.g. http://example.org/fhir/Group/example|1.0.0).",
         "min": 0,
-        "max": 1,
+        "max": "1",
         "type": [
           {
             "code": "Extension",
@@ -341,7 +341,7 @@
         "short": "What type of artifact",
         "definition": "Because the type of an artifact cannot be reliably inferred from the canonical url, this element specifies the type of artifact.",
         "min": 0,
-        "max": 1,
+        "max": "1",
         "type": [
           {
             "code": "Extension",
@@ -398,7 +398,7 @@
         "short": "Uri for non-canonical artifact",
         "definition": "If the reference is to a [non-canonical-artifact](artifact-lifecycle.html#non-canonical-artifacts), this extension is used to provide a canonical-like reference as a uri (e.g. http://example.org/fhir/Group/example|1.0.0).",
         "min": 0,
-        "max": 1,
+        "max": "1",
         "type": [
           {
             "code": "Extension",
@@ -415,7 +415,7 @@
         "short": "What type of artifact",
         "definition": "Because the type of an artifact cannot be reliably inferred from the canonical url, this element specifies the type of artifact.",
         "min": 0,
-        "max": 1,
+        "max": "1",
         "type": [
           {
             "code": "Extension",

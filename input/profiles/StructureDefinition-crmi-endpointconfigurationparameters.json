@@ -20,13 +20,13 @@
   "title": "CRMI Endpoint Configuration Parameters",
   "status": "active",
   "experimental": false,
-  "publisher": "Clinical Decision Support WG",
+  "publisher": "HL7 International / Clinical Decision Support",
   "contact": [
     {
       "telecom": [
         {
           "system": "url",
-          "value": "http://www.hl7.org/Special/committees/dss/index.cfm"
+          "value": "http://www.hl7.org/Special/committees/dss"
         }
       ]
     }
@@ -36,8 +36,9 @@
     {
       "coding": [
         {
-          "system": "urn:iso:std:iso:3166",
-          "code": "001"
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code": "001",
+          "display": "World"
         }
       ]
     }
@@ -101,7 +102,7 @@
       {
         "id": "Parameters.parameter:artifactEndpointConfiguration.name",
         "path": "Parameters.parameter.name",
-        "fixedCode": "artifactEndpointConfiguration"
+        "fixedString": "artifactEndpointConfiguration"
       },
       {
         "id": "Parameters.parameter:artifactEndpointConfiguration.part",

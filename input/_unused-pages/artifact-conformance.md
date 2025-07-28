@@ -125,7 +125,7 @@ Snippet 3-4 illustrates a FHIR Library resource containing a CQL library with a 
       "telecom": [
         {
           "system": "url",
-          "value": "http://www.hl7.org/Special/committees/dss/index.cfm"
+          "value": "http://www.hl7.org/Special/committees/dss"
         }
       ]
     }

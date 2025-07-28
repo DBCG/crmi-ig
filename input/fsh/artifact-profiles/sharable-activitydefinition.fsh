@@ -17,5 +17,5 @@ Description: "Enforces the minimum information set for the activity definition m
 * experimental 1..1 MS
 * publisher MS
 * description 1..1 MS
-* productReference
+* productReference MS
   * extension contains ArtifactUriReference named nonCanonicalReference 0..1 MS

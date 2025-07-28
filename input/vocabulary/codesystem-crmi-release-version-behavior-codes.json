@@ -20,7 +20,17 @@
   "title": "CRMI Release Version Behavior Codes",
   "status": "active",
   "experimental": false,
-  "publisher": "Clinical Decision Support Workgroup",
+  "publisher": "HL7 International / Clinical Decision Support",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/dss"
+        }
+      ]
+    }
+  ],
   "description": "Behaviors of 'version' parameter application in the $release operation.",
   "caseSensitive": true,
   "valueSet": "http://hl7.org/fhir/uv/crmi/ValueSet/crmi-release-version-behavior",

@@ -32,26 +32,26 @@
     } ],
     "item": [ {
       "linkId": "1",
-      "definition": "http://fhir.org/guides/who/smart-anc-mini/StructureDefinition/anc-b4-de1#Observation.value[x]",
+      "definition": "http://example.org/guides/who/smart-anc-mini/StructureDefinition/anc-b4-de1#Observation.value[x]",
       "text": "Pregnancy has been confirmed",
       "type": "boolean"
     }, {
       "linkId": "2",
-      "definition": "http://fhir.org/guides/who/smart-anc-mini/StructureDefinition/anc-encounter#Encounter.reasonCode",
+      "definition": "http://example.org/guides/who/smart-anc-mini/StructureDefinition/anc-encounter#Encounter.reasonCode",
       "text": "Records the reason why the woman came to the health-care facility today",
       "type": "choice",
-      "answerValueSet": "http://fhir.org/guides/who/smart-anc-mini/ValueSet/anc-b5-de1-codes-grouper"
+      "answerValueSet": "http://example.org/guides/who/smart-anc-mini/ValueSet/anc-b5-de1-codes-grouper"
     }, {
       "linkId": "3",
-      "definition": "http://fhir.org/guides/who/smart-anc-mini/StructureDefinition/anc-b5-de5#Observation.value[x]",
+      "definition": "http://example.org/guides/who/smart-anc-mini/StructureDefinition/anc-b5-de5#Observation.value[x]",
       "text": "If the woman came to the facility with a specific health concern, select the health concern(s) from the list",
       "type": "choice",
-      "answerValueSet": "http://fhir.org/guides/who/smart-anc-mini/ValueSet/anc-b5-de6"
+      "answerValueSet": "http://example.org/guides/who/smart-anc-mini/ValueSet/anc-b5-de6"
     }, {
       "linkId": "4",
-      "definition": "http://fhir.org/guides/who/smart-anc-mini/StructureDefinition/anc-b5-de48#Observation.value[x]",
+      "definition": "http://example.org/guides/who/smart-anc-mini/StructureDefinition/anc-b5-de48#Observation.value[x]",
       "text": "Before each contact, the health worker should check whether the woman has any of the danger signs listed here – if yes, she should refer to the hospital urgently; if no, she should continue to the normal contact",
       "type": "choice",
-      "answerValueSet": "http://fhir.org/guides/who/smart-anc-mini/ValueSet/anc-b5-de48-codes-grouper"
+      "answerValueSet": "http://example.org/guides/who/smart-anc-mini/ValueSet/anc-b5-de48-codes-grouper"
     } ]
   }

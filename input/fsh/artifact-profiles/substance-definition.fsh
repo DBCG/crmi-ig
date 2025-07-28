@@ -9,5 +9,5 @@ Description: "Represents the definition of a substance, suitable for use in vari
 * ingredient MS
 * ingredient
   * substance[x] MS
-  * substanceReference
+  * substanceReference MS
     * extension contains ArtifactUriReference named nonCanonicalReference 0..1 MS

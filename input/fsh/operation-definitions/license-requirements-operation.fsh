@@ -247,7 +247,7 @@ in the manifest library have the same meaning as specifying that code system or 
 canonical version in the `system-version` parameter of an expand or the `canonicalVersion` 
 parameter.
 """
-* parameter[=].type = #uri
+* parameter[=].type = #canonical
 
 * parameter[+]
   * name = #include
