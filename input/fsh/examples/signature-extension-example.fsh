@@ -31,9 +31,9 @@ using the public key provided by the CRMI server, and then verify the SHA256
 checksum against the resource's content to ensure it has not been altered.
 """
 * status = #active
-* type = #logic-library
+* type = http://terminology.hl7.org/CodeSystem/library-type#logic-library
 * meta.extension[CRMIArtifactSignature].valueSignature
-  * type = http://hl7.org/fhir/signature-type#ProofOfCreation
+  * type = http://uri.etsi.org/01903/v1.2.2#ProofOfCreation
   * when = "2025-05-12T10:17:55.135Z"
   * who.display = "CRMI Server"
   * sigFormat = #application/jwt

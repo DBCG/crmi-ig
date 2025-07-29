@@ -1,7 +1,7 @@
 Instance: ExampleLicensedLibrary
 InstanceOf: Library
 * status = #active
-* type = #logic-library
+* type = http://terminology.hl7.org/CodeSystem/library-type#logic-library
 * description = """
 This example demonstrates how licensing information can be attached to FHIR knowledge artifacts using CRMI extensions. 
 

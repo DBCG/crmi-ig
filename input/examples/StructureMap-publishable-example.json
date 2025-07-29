@@ -40,11 +40,15 @@
       {
         "name": "Examples",
         "typeMode": "none",
-        "documentation": "test -> testValue",
+        "documentation": "Source.test -> Destination.testValue",
         "input": [
           {
-            "name": "test",
+            "name": "Source",
             "mode": "source"
+          },
+          {
+            "name": "Destination",
+            "mode": "target"
           }
         ],
         "rule": [
