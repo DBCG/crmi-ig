@@ -1,11 +1,5 @@
 == Suppressed Messages ==
 
-# 2.0.0-ballot1:BrokenLinks - I don't understand where these broken links are coming from, they are not in my source content?
-ERROR: ActivityDefinition.extension: The reference http://hl7.org/fhir/ValueSet/version-algorithm could not be resolved
-ERROR: Group.extension: The reference http://hl7.org/fhir/ValueSet/knowledge-representation-level could not be resolved
-ERROR: StructureDefinition-crmi-implementationguide-definitions.html#/html/body/div/div/div/div/div/div/div/table/tr/td/p/a at Line 276, column 732: The link 'http://hl7.org/fhir/uv/crmi/artifact-terminology-service.html#expansion-rules' for "Expansion Rules" cannot be resolved
-ERROR: StructureDefinition-crmi-implementationguide-definitions.html#/html/body/div/div/div/div/div/div/div/table/tr/td/p/a at Line 412, column 732: The link 'http://hl7.org/fhir/uv/crmi/artifact-terminology-service.html#expansion-rules' for "Expansion Rules" cannot be resolved
-
 # 2.0.0-ballot1:001 - Accepted pinned versions
 %Pinned the version of%
 
@@ -322,28 +316,18 @@ INFORMATION: ActivityDefinition/publishable-example: ActivityDefinition.dosage[0
 INFORMATION: ActivityDefinition/shareable-example-artifact-reference: ActivityDefinition.dosage[0].doseAndRate[0].type: Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/dose-rate-type|1.0.0
 INFORMATION: ActivityDefinition/shareable-example: ActivityDefinition.dosage[0].doseAndRate[0].type: Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/dose-rate-type|1.0.0
 INFORMATION: Library/OpioidCDSREC10ModuleConfiguration: Library.dataRequirement[1].extension[1].extension[2].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/search-comparator|4.0.1
-INFORMATION: Library/OpioidCDSREC10ModuleConfiguration: Library.dataRequirement[1].codeFilter[0].code[0]: Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/observation-category|1.0.0
 INFORMATION: Library/OpioidCDSREC10ModuleConfiguration: Library.dataRequirement[2].extension[1].extension[2].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/search-comparator|4.0.1
 INFORMATION: Library/OpioidCDSREC10ModuleConfiguration: Library.dataRequirement[2].codeFilter[0].code[0]: Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/medicationrequest-category|1.0.0
 INFORMATION: Library/OpioidCDSREC10ModuleConfiguration: Library.dataRequirement[2].codeFilter[1].code[0]: Reference to draft CodeSystem http://hl7.org/fhir/CodeSystem/medicationrequest-status|4.0.1
 INFORMATION: Library/OpioidCDSREC10ModuleConfiguration: Library.dataRequirement[3].extension[1].extension[2].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/search-comparator|4.0.1
-INFORMATION: Library/OpioidCDSREC10ModuleConfiguration: Library.dataRequirement[3].codeFilter[0].code[0]: Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/condition-category|1.0.0
-INFORMATION: Library/OpioidCDSREC10ModuleConfiguration: Library.dataRequirement[3].codeFilter[0].code[2]: Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/condition-category|1.0.0
 INFORMATION: Library/OpioidCDSREC10ModuleConfiguration: Library.dataRequirement[4].extension[1].extension[2].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/search-comparator|4.0.1
 INFORMATION: Library/OpioidCDSREC10ModuleConfiguration: Library.dataRequirement[5].extension[1].extension[2].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/search-comparator|4.0.1
 INFORMATION: Library/OpioidCDSREC10ModuleConfiguration: Library.dataRequirement[5].codeFilter[0].code[0]: Reference to draft CodeSystem http://hl7.org/fhir/request-status|4.0.1
 INFORMATION: Library/OpioidCDSREC10ModuleConfiguration: Library.dataRequirement[5].codeFilter[0].code[1]: Reference to draft CodeSystem http://hl7.org/fhir/request-status|4.0.1
-INFORMATION: Library/OpioidCDSREC10ModuleConfiguration: Library.dataRequirement[0].extension[1].extension[2].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/search-comparator|4.0.1
 INFORMATION: Library/moduledefinition-example: Library.dataRequirement[0].extension[1].extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/search-comparator|4.0.1
 INFORMATION: Library/moduledefinition-example: Library.dataRequirement[1].extension[2].extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/search-comparator|4.0.1
 INFORMATION: SearchParameter/publishable-example: SearchParameter.useContext[0].value.ofType(CodeableConcept): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/variant-state|1.0.0
 INFORMATION: SearchParameter/shareable-example: SearchParameter.useContext[0].value.ofType(CodeableConcept): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/variant-state|1.0.0
-INFORMATION: StructureDefinition/crmi-manifestlibrary: StructureDefinition.snapshot.element[21].pattern.ofType(CodeableConcept): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/library-type|1.0.0
-INFORMATION: StructureDefinition/crmi-manifestlibrary: StructureDefinition.differential.element[5].pattern.ofType(CodeableConcept): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/library-type|1.0.0
-INFORMATION: StructureDefinition/crmi-moduleconfigurationlibrary: StructureDefinition.snapshot.element[20].pattern.ofType(CodeableConcept): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/library-type|1.0.0
-INFORMATION: StructureDefinition/crmi-moduleconfigurationlibrary: StructureDefinition.differential.element[4].pattern.ofType(CodeableConcept): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/library-type|1.0.0
-INFORMATION: StructureDefinition/crmi-moduledefinitionlibrary: StructureDefinition.snapshot.element[20].pattern.ofType(CodeableConcept): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/library-type|1.0.0
-INFORMATION: StructureDefinition/crmi-moduledefinitionlibrary: StructureDefinition.differential.element[4].pattern.ofType(CodeableConcept): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/library-type|1.0.0
 
 # 1.0.0:010 - Example code systems, TSMG exemption is not required
 INFORMATION: CodeSystem/publishable-example: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
