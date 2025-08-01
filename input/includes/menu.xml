@@ -27,6 +27,33 @@
     </ul>
   </li>
   <!--li><a href="examples.html" class="item">Examples</a></li-->
-  <li><a href="downloads.html" class="item">Downloads</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="{{site.data.fhir.path}}index.html">FHIR Spec</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://chat.fhir.org/#narrow/channel/179220-cql">Discussion Forum</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://confluence.hl7.org/spaces/CDS/pages/108303939/CRMI+-+Canonical+Resource+Management+Infrastructure+IG">Project Page</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=17138">Specification Dashboard</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?pid=10405&amp;issuetype=10600&amp;customfield_11302=FHIR-crmi">Propose a Change</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <!--li>
+        <a href="license.html">License</a>
+      </li-->
+    </ul>
+  </li>
   <li><a href="changes.html">Version History</a></li>
 </ul>

@@ -4,6 +4,68 @@
 
 This page details changes made in each version of the Canonical Resource Management Infrastructure IG.
 
+### STU 2 Ballot (version 2.0.0-ballot)
+
+The major themes of this ballot are:
+
+* Separated the notion of "released content" from the publication status to support more flexible content hosting, management, and release processes
+* Clarified the distinction between "manifest parameters" (i.e. pinned canonicals) and "manifest library" (i.e. release information about a collection of artifacts, including manifest parameters)
+* Changes to support alignment with the terminology and publishing ecosystems and NPM FHIR packages
+* Changes to improve usability for downstream implementation guides
+
+The following sections detail all the changes that were made as part of this ballot, including changes made in support of the major themes identified above.
+
+#### Non-compatible Changes
+
+* [FHIR-49683](https://jira.hl7.org/browse/FHIR-49683): Recommendation for Deleting Parent/Child Artifacts
+* [FHIR-46503](https://jira.hl7.org/browse/FHIR-46503): Simplify artifact reference representation
+* [FHIR-46048](https://jira.hl7.org/browse/FHIR-46048): Deprecate the expansion parameter
+
+#### Compatible, Substantive Changes
+
+* [FHIR-51467](https://jira.hl7.org/browse/FHIR-51467): Capture "input expansion parameters"
+* [FHIR-51107](https://jira.hl7.org/browse/FHIR-51107): Specify resource type for relatedArtifacts
+* [FHIR-51106](https://jira.hl7.org/browse/FHIR-51106): Record source path for related Artifact references
+* [FHIR-51088](https://jira.hl7.org/browse/FHIR-51088): Clarify manifest parameters, versus manifest library
+* [FHIR-51019](https://jira.hl7.org/browse/FHIR-51019): Separate the notion of release status from artifact status
+* [FHIR-49674](https://jira.hl7.org/browse/FHIR-49674): Define a $resolve operation
+* [FHIR-49132](https://jira.hl7.org/browse/FHIR-49132): Use resource extensions for approvalDate, lastReviewDate, and effectivePeriod
+* [FHIR-48979](https://jira.hl7.org/browse/FHIR-48979): Add valueset-version parameters
+* [FHIR-48823](https://jira.hl7.org/browse/FHIR-48823): Describe message handling for $package
+* [FHIR-48748](https://jira.hl7.org/browse/FHIR-48748): Support lastActiveVersion
+* [FHIR-48594](https://jira.hl7.org/browse/FHIR-48594): Support ValueSet/$expand batch
+* [FHIR-48546](https://jira.hl7.org/browse/FHIR-48546): Allow effective data requirements to be used on subsets of an artifact
+* [FHIR-46439](https://jira.hl7.org/browse/FHIR-46439): Support endpoint configuration
+* [FHIR-46427](https://jira.hl7.org/browse/FHIR-46427): Rename 'Archive' Artifact Repository Action to be 'Delete'
+* [FHIR-46395](https://jira.hl7.org/browse/FHIR-46395): Title should be unique within resource type
+* [FHIR-46315](https://jira.hl7.org/browse/FHIR-46315): Clarification for $package related to expansion of value sets
+* [FHIR-46166](https://jira.hl7.org/browse/FHIR-46166): Add support for content keyword search
+* [FHIR-46163](https://jira.hl7.org/browse/FHIR-46163): Support terminology reference in $artifact-diff operation
+* [FHIR-45297](https://jira.hl7.org/browse/FHIR-45297): SHA Hash process is under-specified
+* [FHIR-45174](https://jira.hl7.org/browse/FHIR-45174): Specify operation for a knowledge repository to accept a FHIR Package
+* [FHIR-44897](https://jira.hl7.org/browse/FHIR-44897): publicationDate and publicationStatus 
+* [FHIR-42586](https://jira.hl7.org/browse/FHIR-42586): How does SHA work acorss syntaxes?
+
+#### Non-substantive Changes
+
+* [FHIR-51468](https://jira.hl7.org/browse/FHIR-51468): Document algorithm for determining "latest version"
+* [FHIR-51087](https://jira.hl7.org/browse/FHIR-51087): Missing "reference" in example
+* [FHIR-50236](https://jira.hl7.org/browse/FHIR-50236): Mark versionPolicy not mustSupport
+* [FHIR-50235](https://jira.hl7.org/browse/FHIR-50235): Move artifactComment to the publishable profiles
+* [FHIR-50005](https://jira.hl7.org/browse/FHIR-50005): Clarify definition of a manifest library
+* [FHIR-48745](https://jira.hl7.org/browse/FHIR-48745): Clarify expectations on capabilities if none are requested
+* [FHIR-48383](https://jira.hl7.org/browse/FHIR-48383): $review id param cardinality
+* [FHIR-48382](https://jira.hl7.org/browse/FHIR-48382): $release param id cardinality
+* [FHIR-48311](https://jira.hl7.org/browse/FHIR-48311): Child artifact guidance for write capabilities
+* [FHIR-48310](https://jira.hl7.org/browse/FHIR-48310): Child artifact guidance for write capabilities
+* [FHIR-46635](https://jira.hl7.org/browse/FHIR-46635): $approve should include child artifacts
+* [FHIR-46634](https://jira.hl7.org/browse/FHIR-46634): $approve id param cardinality 
+* [FHIR-46433](https://jira.hl7.org/browse/FHIR-46433): Add "includeMetadata" parameter to ValueSet/$expand
+* [FHIR-46396](https://jira.hl7.org/browse/FHIR-46396): Name and title should be unique within an IG
+* [FHIR-46299](https://jira.hl7.org/browse/FHIR-46299): Dependencies on the base specification artifacts should be implicit
+* [FHIR-46292](https://jira.hl7.org/browse/FHIR-46292): Packaging uses "ifNotExist", but that should be "If-None-Exist"
+* [FHIR-46233](https://jira.hl7.org/browse/FHIR-46233): wording of $package.terminologyEnpoint parameter
+
 ### STU1 Publication (version 1.0.0)
 
 The following changes were made as a result of comments received in the January ballot:
@@ -217,16 +279,19 @@ From [FHIR Clinical Guidelines (STU1)](http://hl7.org/fhir/uv/cpg/STU1):
 * [Using Libraries](https://hl7.org/fhir/uv/cpg/STU1/libraries.html)
 * [Artifact Profiles](https://hl7.org/fhir/uv/cpg/STU1/profiles.html#artifact-profiles)
 * [Terminology](https://hl7.org/fhir/uv/cpg/terminology.html#terminology)
+
 From [Quality Measures IG (STU4)](http://hl7.org/fhir/us/cqfmeasures/STU4)
 * [Using CQL](https://hl7.org/fhir/us/cqfmeasures/STU4/using-cql.html)
 * [Packaging](https://hl7.org/fhir/us/cqfmeasures/STU4/packaging.html)
 * [Capability Profiles](https://hl7.org/fhir/us/cqfmeasures/STU4/profiles.html)
 * [Measure Terminology Service](https://hl7.org/fhir/us/cqfmeasures/STU4/measure-terminology-service.html)
 * [Measure Repository](https://hl7.org/fhir/us/cqfmeasures/STU4/measure-repository-service.html)
+
 From [QI Core (STU5)](https://hl7.org/fhir/us/qicore/STU5)
 * [Negation](https://hl7.org/fhir/us/qicore/STU5/#negation-in-qi-core)
 * [Patterns](https://hl7.org/fhir/us/qicore/STU5/patterns.html)
 * [ModelInfo](https://hl7.org/fhir/us/qicore/STU5/modelinfo.html)
+
 From [Case Reporting (STU2.1.1)](https://hl7.org/fhir/us/ecr/STU2.1.1/)
 * [Computable Library](https://hl7.org/fhir/us/ecr/STU2.1.1/StructureDefinition-us-ph-computable-library.html)
 * [Computable ValueSet](https://hl7.org/fhir/us/ecr/STU2.1.1/StructureDefinition-us-ph-computable-valueset.html)

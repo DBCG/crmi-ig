@@ -1,11 +1,11 @@
 {
     "package-id" : "hl7.fhir.uv.crmi",
-    "version" : "2.0.0-ballot1",
+    "version" : "2.0.0-ballot",
     "path" : "http://hl7.org/fhir/uv/crmi/2025Sep",
     "mode": "working",
     "status" : "ballot",
     "sequence" : "STU 2",
-    "desc" : "STU 2 - Ballot 1 (v2.0.0-ballot1)",
+    "desc" : "STU 2 - Ballot (v2.0.0-ballot)",
     "descmd" : "STU 2 Ballot Publication",
     "first" : false
   }
