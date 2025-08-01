@@ -20,7 +20,7 @@
         }
     }, {
         "url": "http://hl7.org/fhir/StructureDefinition/artifact-title",
-        "valueString": "Publishable Substance Definition Example"
+        "valueString": "Publishable Substance Example"
     }, {
         "url": "http://hl7.org/fhir/StructureDefinition/artifact-experimental",
         "valueBoolean": true
@@ -34,7 +34,7 @@
         }
     }, {
         "url": "http://hl7.org/fhir/StructureDefinition/artifact-description",
-        "valueMarkdown": "Publishable Substance Definition Example"
+        "valueMarkdown": "Example of a Substance resource as a publishable non-canonical artifact."
     }, {
         "url": "http://hl7.org/fhir/StructureDefinition/artifact-date",
         "valueDateTime": "2023-07-25"

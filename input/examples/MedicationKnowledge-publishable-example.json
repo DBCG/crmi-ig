@@ -34,7 +34,7 @@
         }
     }, {
         "url": "http://hl7.org/fhir/StructureDefinition/artifact-description",
-        "valueMarkdown": "Publishable MedicationKnowledge Example"
+        "valueMarkdown": "Example of a MedicationKnowledge resource as a publishable non-canonical artifact."
     }, {
         "url": "http://hl7.org/fhir/StructureDefinition/artifact-date",
         "valueDateTime": "2023-07-25"

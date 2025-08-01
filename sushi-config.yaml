@@ -181,13 +181,31 @@ resources:
     description: Example of a Software System Device instance for describing tooling that was used to process artifacts. This resource is typically referenced from the `crmi-softwaresystem` extension
   Medication/definition-example:
     name: Example Medication Definition
-    description: Example of a Medication resource illustrating use as a definitional artifact.
+    description: Example of a Medication resource illustrating use as a non-canonical artifact.
+  Medication/publishable-example:
+    name: Publishable Medication Example
+    description: Example of a Medication resource as a publishable non-canonical artifact.
+  Medication/shareable-example:
+    name: Shareable Medication Example
+    description: Example of a Medication resource as a shareable non-canonical artifact.
   MedicationKnowledge/definition-example:
     name: Example MedicationKnowledge Definition
-    description: Example of a MedicationKnowledge resource illustrating use as a definitional artifact.
+    description: Example of a MedicationKnowledge resource illustrating use as a non-canonical artifact.
+  MedicationKnowledge/publishable-example:
+    name: Publishable MedicationKnowledge Example
+    description: Example of a MedicationKnowledge resource as a publishable non-canonical artifact.
+  MedicationKnowledge/shareable-example:
+    name: Shareable MedicationKnowledge Example
+    description: Example of a MedicationKnowledge resource as a shareable non-canonical artifact.
   Substance/artifact-reference-example:
     name: Example Substance Definition
-    description: Example of a Substance resource illustrating use as a definitional artifact.
+    description: Example of a Substance resource illustrating use as a non-canonical artifact.
+  Substance/publishable-example:
+    name: Publishable Substance Example
+    description: Example of a Substance resource as a publishable non-canonical artifact.
+  Substance/shareable-example:
+    name: Shareable Substance Example
+    description: Example of a Substance resource as a shareable non-canonical artifact.
   MeasureReport/result-example:
     name: Example MeasureReport
     description: Example MeasureReport illustrating use of MeasureReport as a test case.
