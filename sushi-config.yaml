@@ -98,6 +98,8 @@ parameters:
   default-copyright: true
   apply-jurisdiction: false
   default-jurisdiction: true
+  apply-wg: false
+  default-wg: true
 
 pages:
   index.md:
